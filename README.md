@@ -81,6 +81,7 @@ Dans ce mini HearthStone, 3 héros seront jouables : le mage, le paladin et le g
 joueur doit sélectionner son héros en début de partie. Les deux joueurs peuvent jouer le même héros.
 Chaque héros a une action spéciale qu’il peut exécuter une fois par tour en payant 2 points de
 mana. Ces actions sont :
+
 — Mage : Boule de feu, infligeant un point de dégâts à un adversaire (serviteur ou héros).
 
 — Paladin : Renfort, invoquant un serviteur “recrue de la Main d’argent” 1/1.
