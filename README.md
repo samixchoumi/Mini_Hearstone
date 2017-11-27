@@ -1,3 +1,5 @@
+Effect = instaurer pattern state pour etat jouer ou attendre
+
 # Mini_Hearstone
 
 Mini projet sur le traitement des Design Patterns - LP MiAR
