@@ -9,7 +9,7 @@ public class PowerGuerrier implements Power {
 	
 	public PowerGuerrier() {
 		this.name = "Armure";
-		this.effect = "Confére 2 points d’armure.";
+		this.effect = "Confere 2 points d armure.";
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class PowerGuerrier implements Power {
 	}
 	
 	public String toString(){
-		return "Utilise sa capacité spécial : " + this.name + " !"+
+		return "Utilise sa capacite special : " + this.name + " !"+
 				"\n" + this.effect;
 	}
 }

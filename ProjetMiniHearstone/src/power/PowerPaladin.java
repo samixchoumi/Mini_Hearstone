@@ -9,7 +9,7 @@ public class PowerPaladin implements Power {
 	
 	public PowerPaladin() {
 		this.name = "Renfort";
-		this.effect = "Invoquant un serviteur \"recrue de la Main d’argent\" ."; //1/1
+		this.effect = "Invoquant un serviteur \"recrue de la Main d argent\" ."; //1/1
 	}
 
 	@Override
@@ -31,7 +31,7 @@ public class PowerPaladin implements Power {
 	}
 	
 	public String toString(){
-		return "Utilise sa capacité spécial : " + this.name + " !"+
+		return "Utilise sa capacite special : " + this.name + " !"+
 				"\n" + this.effect;
 	}
 }

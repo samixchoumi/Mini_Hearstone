@@ -11,7 +11,7 @@ public class PowerMage implements Power {
 	
 	public PowerMage() {
 		this.name = "Boule de feu";
-		this.effect = "Inflige un point de dégât à "+this.adversaire.getName();
+		this.effect = "Inflige un point de degat a� "+this.adversaire.getName();
 			
 	}
 
@@ -35,7 +35,7 @@ public class PowerMage implements Power {
 	}
 
 	public String toString(){
-		return "Utilise sa capacité spécial : " + this.name + " !"+
+		return "Utilise sa capacite special : " + this.name + " !"+
 				"\n" + this.effect;
 	}
 }
