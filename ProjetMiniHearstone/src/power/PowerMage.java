@@ -28,12 +28,10 @@ public class PowerMage implements Power {
 	}
 
 	@Override
-	public boolean usePower() {
+	public void usePower() {
 		// TODO Auto-generated method stub
-		
-		return true; //Si pouvoir effectué
-		
-		//return false; // Si pouvoir pas effectué
+		System.out.println(toString());
+		adversaire.setLife(adversaire.getLife() - 1);
 	}
 
 	public String toString(){
