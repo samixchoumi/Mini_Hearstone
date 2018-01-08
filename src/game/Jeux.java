@@ -1,16 +1,18 @@
 package game;
 
-
-import card.FactoryCard;
-import card.commune.*;
-import card.guerrier.*;
-import card.mage.*;
-import card.paladin.*;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
 
 public class Jeux {
+	
+	public void initialisationPartie(Joueur j1, Joueur j2){
+		j1.initialiseMain();
+		j2.initialiseMain();
+		//test
+		j1.afficherCardMain();
+		j2.afficherCardMain();
+	}
 	
 	public void changementDeTour(Joueur j1, Joueur j2){
 		//TODO DP State
@@ -36,11 +38,7 @@ public class Jeux {
 			System.out.println("joueur2 : " + j2.getEtat());
 			
 		}
-		
-		
 	}
-	
-	//TODO Decorator pour Heros
 	
 	public void observationEffectCarte(){
 		//TODO DP Observer (et DP State)

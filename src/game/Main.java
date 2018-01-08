@@ -12,20 +12,22 @@ public class Main {
 		
 		Jeux jeu1 = new Jeux();
 		
-		Joueur joueur1 = new Joueur(null, null);
-		Joueur joueur2 = new Joueur(null, null);
+		Joueur j1 = new Joueur("Samix", null);
+		Joueur j2 = new Joueur("Cedric", null);
+		
+		jeu1.initialisationPartie(j1, j2);
 		
 		EtatJouer joue = new EtatJouer();
 		EtatAttente enAttente = new EtatAttente();
 		
-		joue.etatJouer(joueur1);
-		enAttente.etatJouer(joueur2);
+		joue.etatJouer(j1);
+		enAttente.etatJouer(j2);
 		System.out.println("------------------Etat de depart------------------");
-		System.out.println("joueur1 : " + joueur1.getEtat());
-		System.out.println("joueur2 : " + joueur2.getEtat());
+		System.out.println("joueur1 : " + j1.getEtat());
+		System.out.println("joueur2 : " + j2.getEtat());
 		
-		jeu1.changementDeTour(joueur1, joueur2);
-		jeu1.changementDeTour(joueur1, joueur2);
+		jeu1.changementDeTour(j1, j2);
+		jeu1.changementDeTour(j1, j2);
 		
 		// TODO Auto-generated method stub
 		//TODO Scanner

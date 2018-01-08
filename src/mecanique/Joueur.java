@@ -81,7 +81,7 @@ public class Joueur {
 		int random = (int)(Math.random()*(higher-lower)) + lower;
 		
 		FactoryCard fc = null;
-		Joueur j1 = null;
+		Joueur j1 = this;
 		if(j1.getHeros().typeHero() == "Mage"){
 			switch (random) {
 				case 1: fc = new CardChefDeRaid();
@@ -162,6 +162,13 @@ public class Joueur {
 		listeCarteEnJeux.add(carteAJouer);
 	}
 
+	public void afficherCardMain(){
+		for(FactoryCard c : listeCarteDuJoueurMain){
+			System.out.println(listeCarteDuJoueurMain.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
+		}
+			
+	}
+	
 	public Etat getEtat() {
 		return etat;
 	}
