@@ -34,4 +34,10 @@ public class CardYétiNoroit implements Card {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	@Override
+	public boolean canBeAttaque() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

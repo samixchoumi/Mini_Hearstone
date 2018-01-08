@@ -41,4 +41,10 @@ public class CardMétamorphose implements Card {
 		return false;
 	}
 
+	@Override
+	public boolean canBeAttaque() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

@@ -33,4 +33,10 @@ public class CardChefDeRaid implements Card {
 	public boolean canAttaque() {
 		return false;
 	}
+
+	@Override
+	public boolean canBeAttaque() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

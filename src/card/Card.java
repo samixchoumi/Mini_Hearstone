@@ -8,4 +8,5 @@ public interface Card{
 	int getMana();
 	Effect getEffect();
 	boolean canAttaque();
+	boolean canBeAttaque();
 }
