@@ -8,22 +8,32 @@ public class CardMetamorphose extends FactoryCard {
 //		effect = new Effect(); //transforme un serviteur en serviteur 1/1 sans effet spécial
 //	}
 	
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardMetamorphose() {
+		this.attaque = 0;
+		this.life = 0;
+		this.mana = 4;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 0;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 0;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 4;
+		return mana;
 	}
 
 	@Override

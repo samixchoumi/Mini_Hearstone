@@ -4,22 +4,32 @@ import card.FactoryCard;
 
 public class CardChefDeRaid extends FactoryCard {
 
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardChefDeRaid() {
+		this.attaque = 2;
+		this.life = 2;
+		this.mana = 3;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 3;
+		return attaque;
 	}
 	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 3;
+		return life;
 	}
 	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 2;
+		return mana;
 	}
 
 	@Override

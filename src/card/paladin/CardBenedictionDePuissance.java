@@ -8,22 +8,32 @@ public class CardBenedictionDePuissance extends FactoryCard{
 //		effect1 = new Effect(); // confère +3 d’attaque à un serviteur
 //	}
 
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardBenedictionDePuissance() {
+		this.attaque = 0;
+		this.life = 0;
+		this.mana = 1;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 0;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 0;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 1;
+		return mana;
 	}
 
 	@Override

@@ -4,10 +4,32 @@ import card.FactoryCard;
 
 public class CardServiteurZeroDeux extends FactoryCard{
 
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardServiteurZeroDeux() {
+		this.attaque = 0;
+		this.life = 2;
+		this.mana = 0;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 0;
+		return attaque;
+	}
+	
+	@Override
+	public int getLife() {
+		// TODO Auto-generated method stub
+		return life;
+	}
+	
+	@Override
+	public int getMana() {
+		// TODO Auto-generated method stub
+		return mana;
 	}
 
 	@Override
@@ -17,21 +39,9 @@ public class CardServiteurZeroDeux extends FactoryCard{
 	}
 
 	@Override
-	public int getLife() {
-		// TODO Auto-generated method stub
-		return 2;
-	}
-
-	@Override
 	public void setLife(int hp) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public int getMana() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override

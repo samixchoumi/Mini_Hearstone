@@ -4,22 +4,32 @@ import card.FactoryCard;
 
 public class CardChevaucheurDeLoup extends FactoryCard {
 
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardChevaucheurDeLoup() {
+		this.attaque = 3;
+		this.life = 1;
+		this.mana = 3;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 3;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 3;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 1;
+		return mana;
 	}
 
 	@Override

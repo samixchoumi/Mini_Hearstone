@@ -8,22 +8,32 @@ public class CardExplosionDesArcanes extends FactoryCard {
 //		effect = new Effect(); // inflige 1 pt de degat a tout les serviteur adver
 //	}
 	
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardExplosionDesArcanes() {
+		this.attaque = 0;
+		this.life = 0;
+		this.mana = 2;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 0;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 0;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 2;
+		return mana;
 	}
 
 	@Override
