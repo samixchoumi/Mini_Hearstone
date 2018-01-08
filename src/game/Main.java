@@ -12,8 +12,8 @@ public class Main {
 		
 		Jeux jeu1 = new Jeux();
 		
-		Joueur j1 = new Joueur("Samix", null);
-		Joueur j2 = new Joueur("Cedric", null);
+		Joueur j1 = new Joueur("Samix", "Mage");
+		Joueur j2 = new Joueur("Cedric", "Mage");
 		
 		jeu1.initialisationPartie(j1, j2);
 		

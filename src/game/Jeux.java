@@ -12,6 +12,7 @@ public class Jeux {
 		//test
 		j1.afficherCardMain();
 		j2.afficherCardMain();
+		
 	}
 	
 	public void changementDeTour(Joueur j1, Joueur j2){

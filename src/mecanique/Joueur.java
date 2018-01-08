@@ -49,15 +49,14 @@ public class Joueur {
 	}
 
 	public void setHeros(String heros) {
-		if(heros != null){
-			System.out.println("Heros deja attribue");
-		} else if(heros == "Mage"){
+		if(heros == "Mage"){
 			this.heros = new HerosMage();
 		} else if(heros == "Guerrier"){
 			this.heros = new HerosGuerrier();
 		} else if(heros == "Paladin"){
 			this.heros = new HerosPaladin();
 		}
+		System.out.println(getHeros());
 	}
 
 	public String getName() {
