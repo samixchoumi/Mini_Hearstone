@@ -7,7 +7,8 @@ public class Joueur {
 	private boolean enVie;
 	private int mana;
 	private Heros heros;
-
+	private Etat etat;
+	
 	public boolean isEnVie() {
 		return enVie;
 	}
@@ -38,5 +39,13 @@ public class Joueur {
 
 	public void setMana(int mana) {
 		this.mana = mana;
+	}
+
+	public Etat getEtat() {
+		return etat;
+	}
+
+	public void setEtat(Etat etat) {
+		this.etat = etat;
 	}
 }
