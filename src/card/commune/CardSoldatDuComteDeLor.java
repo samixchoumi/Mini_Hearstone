@@ -7,30 +7,25 @@ public class CardSoldatDuComteDeLor extends FactoryCard {
 	private int attaque;
 	private int life;
 	private int mana;
+	private boolean canAttaque;
+	private boolean canBeAttaque;
 
 	public CardSoldatDuComteDeLor() {
-		this.attaque = 1;
-		this.life = 2;
-		this.mana = 1;
+		this.attaque      = 1;
+		this.life         = 2;
+		this.mana         = 1;
+		this.canAttaque   = false;
+		this.canBeAttaque = true;
 	}
 
 	@Override
-	public int getAttaque() {
-		// TODO Auto-generated method stub
-		return attaque;
-	}
+	public int getAttaque() {return attaque;}
 	
 	@Override
-	public int getLife() {
-		// TODO Auto-generated method stub
-		return life;
-	}
+	public int getLife() {return life;}
 	
 	@Override
-	public int getMana() {
-		// TODO Auto-generated method stub
-		return mana;
-	}
+	public int getMana() {return mana;}
 
 	@Override
 	public String getEffect() {
@@ -39,26 +34,24 @@ public class CardSoldatDuComteDeLor extends FactoryCard {
 	}
 
 	@Override
-	public boolean canAttaque() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public void setAttaque(int atk) {this.attaque = atk;}
 
 	@Override
-	public boolean canBeAttaque() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public void setLife(int hp) {this.life = hp;}
 
 	@Override
-	public void setAttaque(int atk) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void setCanAttaque(boolean b) {this.canAttaque = b;}
 
 	@Override
-	public void setLife(int hp) {
-		// TODO Auto-generated method stub
-		
+	public boolean getCanAttaque() {return canAttaque;}
+
+	@Override
+	public void setCanBeAttaque(boolean b) {this.canBeAttaque = b;}
+
+	@Override
+	public boolean getCanBeAttaque() {return canBeAttaque;}
+	
+	public String toString(){
+		return "Soldat du comté-de-l’or | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
 	}
 }

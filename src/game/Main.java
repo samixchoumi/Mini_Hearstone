@@ -12,6 +12,30 @@ public class Main {
 		
 		Jeux jeu1 = new Jeux();
 		
+		/*
+		 * Création des joueurs
+		 */
+		/*
+		 * ERREUR - A corriger
+		 * 
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
+		String joueur1Pseudo = sc.nextLine();
+		System.out.println("Joueur 2 : Veuillez choisir un pseudo : ");
+		String joueur2Pseudo = sc.nextLine();
+		
+		System.out.println("Joueur 1 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
+		String joueur1Heros = sc.nextLine();
+		System.out.println("Joueur 2 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
+		String joueur2Heros = sc.nextLine();
+		
+		System.err.println("psd1+>"+joueur1Pseudo);
+		System.err.println("psd2+>"+joueur2Pseudo);
+		System.err.println("her1+>"+joueur1Heros);
+		System.err.println("her2+>"+joueur2Heros);
+		Joueur j1 = new Joueur(joueur1Pseudo,joueur1Heros);
+		Joueur j2 = new Joueur(joueur2Pseudo,joueur2Heros);
+		*/
 		Joueur j1 = new Joueur("Samix", "Mage");
 		Joueur j2 = new Joueur("Cedric", "Mage");
 		

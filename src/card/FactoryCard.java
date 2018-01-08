@@ -7,6 +7,8 @@ public abstract class FactoryCard{
 	public abstract void setLife(int hp);
 	public abstract int getMana();
 	public abstract String getEffect();
-	public abstract boolean canAttaque();
-	public abstract boolean canBeAttaque();
+	public abstract void setCanAttaque(boolean b);
+	public abstract boolean getCanAttaque();
+	public abstract void setCanBeAttaque(boolean b);
+	public abstract boolean getCanBeAttaque();
 }

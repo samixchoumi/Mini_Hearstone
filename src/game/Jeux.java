@@ -7,10 +7,22 @@ import mecanique.Joueur;
 public class Jeux {
 	
 	public void initialisationPartie(Joueur j1, Joueur j2){
-		j1.initialiseMain();
-		j2.initialiseMain();
-		//test
+		int lower = 1 , higher = 3;
+		int random = (int)(Math.random()*(higher-lower)) + lower;
+		System.out.println("random == " + random);
+		if(random == 1){
+			j1.initialiseMain(random);
+			System.out.println("---------");
+			j2.initialiseMain(2);
+		} else {
+			j1.initialiseMain(random);
+			System.out.println("---------");
+			j2.initialiseMain(1);
+		}
+		System.out.println("--------- verif des mains ci dessous");
+		//verif des mains ci dessous
 		j1.afficherCardMain();
+		System.out.println("---------");
 		j2.afficherCardMain();
 		
 	}

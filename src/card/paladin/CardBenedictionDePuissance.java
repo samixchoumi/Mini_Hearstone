@@ -4,37 +4,28 @@ import card.FactoryCard;
 
 public class CardBenedictionDePuissance extends FactoryCard{
 	
-//	public CardBénédictionDePuissance() {
-//		effect1 = new Effect(); // confère +3 d’attaque à un serviteur
-//	}
-
 	private int attaque;
 	private int life;
 	private int mana;
+	private boolean canAttaque;
+	private boolean canBeAttaque;
 
 	public CardBenedictionDePuissance() {
-		this.attaque = 0;
-		this.life = 0;
-		this.mana = 1;
+		this.attaque      = 0; //Sort
+		this.life         = 0; //Sort
+		this.mana         = 1;
+		this.canAttaque   = false; //Sort
+		this.canBeAttaque = false; //Sort
 	}
 
 	@Override
-	public int getAttaque() {
-		// TODO Auto-generated method stub
-		return attaque;
-	}
+	public int getAttaque() {return attaque;}
 	
 	@Override
-	public int getLife() {
-		// TODO Auto-generated method stub
-		return life;
-	}
+	public int getLife() {return life;}
 	
 	@Override
-	public int getMana() {
-		// TODO Auto-generated method stub
-		return mana;
-	}
+	public int getMana() {return mana;}
 
 	@Override
 	public String getEffect() {
@@ -43,27 +34,24 @@ public class CardBenedictionDePuissance extends FactoryCard{
 	}
 
 	@Override
-	public boolean canAttaque() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public void setAttaque(int atk) {this.attaque = atk;}
 
 	@Override
-	public boolean canBeAttaque() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public void setLife(int hp) {this.life = hp;}
 
 	@Override
-	public void setAttaque(int atk) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void setCanAttaque(boolean b) {this.canAttaque = b;}
 
 	@Override
-	public void setLife(int hp) {
-		// TODO Auto-generated method stub
-		
-	}
+	public boolean getCanAttaque() {return canAttaque;}
 
+	@Override
+	public void setCanBeAttaque(boolean b) {this.canBeAttaque = b;}
+
+	@Override
+	public boolean getCanBeAttaque() {return canBeAttaque;}
+	
+	public String toString(){
+		return "Benediction de puissance | " +getMana()+"mana | "+" Sort |" ;
+	}
 }

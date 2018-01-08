@@ -48,7 +48,6 @@ public class Joueur {
 		this.name = name;
 		this.enVie = true;
 		this.mana = 1;
-		this.heros = null;
 		setHeros(heros);
 		listeCarteDuJoueurMain = new ArrayList<>();
 		listeCarteEnJeux = new ArrayList<>();
@@ -160,16 +159,35 @@ public class Joueur {
 		return fc;
 	}
 	
-	public void initialiseMain(){
-		//methode de test
-		addCardMain();
-		addCardMain();
-		addCardMain();
+	public void initialiseMain(int rand){
+		int pdM = getMana();
+		if(rand == 1){
+			//methode de test
+			addCardMain();
+			addCardMain();
+			addCardMain();
+			setMana(pdM+1);
+			//verif carte en main
+			System.out.println("Carte en main de "+getName());
+			//verif mana
+			System.out.println("Mana : " + getMana());
+			//verif vie
+			System.out.println("Vie : " + getHeros().getLife());
+		}
+		else if(rand == 2){
+			addCardMain();
+			addCardMain();
+			addCardMain();
+			addCardMain();
+			System.out.println("Carte en main de "+getName());
+			System.out.println("Mana : " + getMana());
+			System.out.println("Vie : " + getHeros().getLife());
+		}
 	}
 	
 	public void addCardMain(){
 		FactoryCard carteAjout = tirageCarte();
-		System.out.println(carteAjout + "A ete ajoute a votre main !");
+		System.out.println(carteAjout.toString() + " a ete ajoute a votre main !");
 		listeCarteDuJoueurMain.add(carteAjout);
 	}
 	
@@ -181,7 +199,7 @@ public class Joueur {
 
 	public void afficherCardMain(){
 		for(FactoryCard c : listeCarteDuJoueurMain){
-			System.out.println(listeCarteDuJoueurMain.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
+			System.out.println("|" +listeCarteDuJoueurMain.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
 		}
 			
 	}

@@ -4,28 +4,27 @@ import power.Power;
 
 public class HerosGuerrier implements Heros {
 
-	@Override
-	public int getLife() {
-		// TODO Auto-generated method stub
-		return 0;
+	private int life;
+	
+	public HerosGuerrier(){
+		this.life = 30;
 	}
+	
+	@Override
+	public int getLife() {return life;}
 
 	@Override
-	public void setLife(int life) {
-		// TODO Auto-generated method stub
-
-	}
+	public void setLife(int life) {this.life = life;}
 
 	@Override
-	public String typeHero() {
-		// TODO Auto-generated method stub
-		return "Guerrier";
-	}
+	public String typeHero() {return "Guerrier";}
 
 	@Override
 	public Power getPower() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String toString(){return typeHero();}
 
 }
