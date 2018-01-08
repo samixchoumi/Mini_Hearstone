@@ -1,14 +1,13 @@
 package card.effect;
 
 import card.Card;
-import hero.Heros;
-import mecanique.adversaire.Adversaire;
+import mecanique.Joueur;
 
 public class EffectVolDeVie implements Effect {
 	private String name;
 	private String effect;
 	private Card card;
-	private Heros heros;
+	private Joueur joueurHeros;
 	
 	public EffectVolDeVie() {
 		this.name = "Vol de vie";
@@ -30,10 +29,10 @@ public class EffectVolDeVie implements Effect {
 	@Override
 	public void useEffect() {
 		// TODO Auto-generated method stub
-		if(heros.getLife() + card.getAttaque() > 30){
-			heros.setLife(30);
+		if(joueurHeros.getHeros().getLife() + card.getAttaque() > 30){
+			joueurHeros.getHeros().setLife(30);
 		}else{
-			heros.setLife(heros.getLife() + card.getAttaque());
+			joueurHeros.getHeros().setLife(joueurHeros.getHeros().getLife() + card.getAttaque());
 		}
 	}
 	

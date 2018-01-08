@@ -1,18 +1,17 @@
 package power;
 
-import mecanique.adversaire.Adversaire;
+import mecanique.Joueur;
 import power.Power;
 
 public class PowerMage implements Power {
 	
 	private String name;
 	private String effect;
-	private Adversaire adversaire;
+	private Joueur joueurAdversaire;
 	
 	public PowerMage() {
 		this.name = "Boule de feu";
-		this.effect = "Inflige un point de degat a  "+this.adversaire.getName();
-			
+		this.effect = "Inflige un point de degat a  "+this.joueurAdversaire.getName();
 	}
 
 	@Override
@@ -31,7 +30,7 @@ public class PowerMage implements Power {
 	public void usePower() {
 		// TODO Auto-generated method stub
 		System.out.println(toString());
-		adversaire.setLife(adversaire.getLife() - 1);
+		joueurAdversaire.getHeros().setLife(joueurAdversaire.getHeros().getLife() - 1);
 	}
 
 	public String toString(){
