@@ -1,6 +1,5 @@
 package game;
 
-import card.commune.CardChevaucheurDeLoup;
 import mecanique.Joueur;
 
 public class Jeux {
