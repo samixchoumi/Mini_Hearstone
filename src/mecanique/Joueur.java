@@ -24,6 +24,7 @@ public class Joueur {
 	private boolean enVie;
 	private int mana;
 	private Heros heros;
+	private Etat etat;
 	private ArrayList<FactoryCard> listeCarteDuJoueurMain;
 	private ArrayList<FactoryCard> listeCarteEnJeux;
 	
@@ -34,7 +35,7 @@ public class Joueur {
 		this.heros = null;
 		setHeros(heros);
 	}
-
+	
 	public boolean isEnVie() {
 		return enVie;
 	}
@@ -159,5 +160,13 @@ public class Joueur {
 		int NumeroDeLaCarteDansLaMain = 1;
 		FactoryCard carteAJouer = listeCarteDuJoueurMain.get(NumeroDeLaCarteDansLaMain);
 		listeCarteEnJeux.add(carteAJouer);
+	}
+
+	public Etat getEtat() {
+		return etat;
+	}
+
+	public void setEtat(Etat etat) {
+		this.etat = etat;
 	}
 }
