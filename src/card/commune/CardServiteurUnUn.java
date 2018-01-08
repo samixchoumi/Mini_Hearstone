@@ -3,11 +3,33 @@ package card.commune;
 import card.FactoryCard;
 
 public class CardServiteurUnUn extends FactoryCard{
+	
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardServiteurUnUn() {
+		this.attaque = 1;
+		this.life = 1;
+		this.mana = 0;
+	}
 
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 1;
+		return attaque;
+	}
+	
+	@Override
+	public int getLife() {
+		// TODO Auto-generated method stub
+		return life;
+	}
+	
+	@Override
+	public int getMana() {
+		// TODO Auto-generated method stub
+		return mana;
 	}
 
 	@Override
@@ -17,21 +39,9 @@ public class CardServiteurUnUn extends FactoryCard{
 	}
 
 	@Override
-	public int getLife() {
-		// TODO Auto-generated method stub
-		return 1;
-	}
-
-	@Override
 	public void setLife(int hp) {
 		// TODO Auto-generated method stub
 		
-	}
-
-	@Override
-	public int getMana() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 
 	@Override

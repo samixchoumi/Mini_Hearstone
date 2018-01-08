@@ -10,22 +10,32 @@ public class CardChampionFrisselame extends FactoryCard {
 //	}
 	
 	
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardChampionFrisselame() {
+		this.attaque = 3;
+		this.life = 2;
+		this.mana = 4;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 4;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 3;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 2;
+		return mana;
 	}
 
 	@Override

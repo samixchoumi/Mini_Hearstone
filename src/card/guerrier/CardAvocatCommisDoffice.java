@@ -9,22 +9,32 @@ public class CardAvocatCommisDoffice extends FactoryCard {
 //		effect1 = new Effect(); //provocation
 //	}
 	
+	private int attaque;
+	private int life;
+	private int mana;
+
+	public CardAvocatCommisDoffice() {
+		this.attaque = 0;
+		this.life = 7;
+		this.mana = 2;
+	}
+
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
-		return 2;
+		return attaque;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
-		return 0;
+		return life;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
-		return 7;
+		return mana;
 	}
 
 	@Override
