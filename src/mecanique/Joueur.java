@@ -28,12 +28,30 @@ public class Joueur {
 	private ArrayList<FactoryCard> listeCarteDuJoueurMain;
 	private ArrayList<FactoryCard> listeCarteEnJeux;
 	
+	public ArrayList<FactoryCard> getListeCarteDuJoueurMain() {
+		return listeCarteDuJoueurMain;
+	}
+
+	public void setListeCarteDuJoueurMain(ArrayList<FactoryCard> listeCarteDuJoueurMain) {
+		this.listeCarteDuJoueurMain = listeCarteDuJoueurMain;
+	}
+
+	public ArrayList<FactoryCard> getListeCarteEnJeux() {
+		return listeCarteEnJeux;
+	}
+
+	public void setListeCarteEnJeux(ArrayList<FactoryCard> listeCarteEnJeux) {
+		this.listeCarteEnJeux = listeCarteEnJeux;
+	}
+
 	public Joueur(String name, String heros) {
 		this.name = name;
 		this.enVie = true;
 		this.mana = 1;
 		this.heros = null;
 		setHeros(heros);
+		listeCarteDuJoueurMain = new ArrayList<>();
+		listeCarteEnJeux = new ArrayList<>();
 	}
 	
 	public boolean isEnVie() {

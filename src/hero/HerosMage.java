@@ -19,7 +19,7 @@ public class HerosMage implements Heros {
 	@Override
 	public String typeHero() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Mage";
 	}
 
 	@Override

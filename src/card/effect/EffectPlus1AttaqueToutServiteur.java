@@ -1,8 +1,12 @@
 package card.effect;
 
+import card.FactoryCard;
+import mecanique.Joueur;
+
 public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	private String name;
 	private String effect;
+	private Joueur j;
 	
 	public EffectPlus1AttaqueToutServiteur() {
 		this.name = "Plus 1 d attaque";
@@ -24,6 +28,10 @@ public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	@Override
 	public void useEffect() { //donne a tout les serviteurs 1 point d attaque en plus pendant que ce serviteur est en vie 
 		// TODO Auto-generated method stub
+		for(FactoryCard c : j.getListeCarteEnJeux()){
+			int attack = c.getAttaque();
+			c.setAttaque(attack++);
+		}
 	}
 
 	@Override
