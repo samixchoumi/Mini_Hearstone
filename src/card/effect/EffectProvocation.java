@@ -1,6 +1,6 @@
 package card.effect;
 
-public class EffectProvocation implements Effect {
+public class EffectProvocation extends EffectDecorator {
 	private String name;
 	private String effect;
 	

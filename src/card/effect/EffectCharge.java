@@ -1,11 +1,8 @@
 package card.effect;
 
-import card.Card;
-
-public class EffectCharge implements Effect {
+public class EffectCharge extends EffectDecorator {
 	private String name;
 	private String effect;
-	private Card carte;
 	
 	public EffectCharge() {
 		this.name = "Charge";

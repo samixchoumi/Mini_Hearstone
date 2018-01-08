@@ -1,17 +1,15 @@
 package card.effect;
 
-import card.Card;
 import mecanique.Joueur;
 
-public class EffectVolDeVie implements Effect {
+public class EffectVolDeVie extends EffectDecorator {
 	private String name;
 	private String effect;
-	private Card card;
 	private Joueur joueurHeros;
 	
 	public EffectVolDeVie() {
 		this.name = "Vol de vie";
-		this.effect = "Vol " + card.getAttaque() + " point de vie";
+		this.effect = "Vol " + fc.getAttaque() + " point de vie";
 	}
 
 	@Override
@@ -29,10 +27,10 @@ public class EffectVolDeVie implements Effect {
 	@Override
 	public void useEffect() {
 		// TODO Auto-generated method stub
-		if(joueurHeros.getHeros().getLife() + card.getAttaque() > 30){
+		if(joueurHeros.getHeros().getLife() + fc.getAttaque() > 30){
 			joueurHeros.getHeros().setLife(30);
 		}else{
-			joueurHeros.getHeros().setLife(joueurHeros.getHeros().getLife() + card.getAttaque());
+			joueurHeros.getHeros().setLife(joueurHeros.getHeros().getLife() + fc.getAttaque());
 		}
 	}
 	

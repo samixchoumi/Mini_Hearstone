@@ -1,12 +1,8 @@
 package card.guerrier;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardMaitriseDuBlocage implements Card {
-
-	
-	Effect effect;
+public class CardMaitriseDuBlocage extends FactoryCard  {
 	
 //	public CardMaitriseDuBlocage() {
 //		effect1 = new Effect(); //+5 d’armure
@@ -32,7 +28,7 @@ public class CardMaitriseDuBlocage implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -47,6 +43,18 @@ public class CardMaitriseDuBlocage implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

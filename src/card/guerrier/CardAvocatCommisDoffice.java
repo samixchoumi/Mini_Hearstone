@@ -1,11 +1,9 @@
 package card.guerrier;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardAvocatCommisDoffice implements Card {
+public class CardAvocatCommisDoffice extends FactoryCard {
 
-	Effect effect;
 	
 //	public CardAvocatCommisDoffice() {
 //		effect1 = new Effect(); //provocation
@@ -30,7 +28,7 @@ public class CardAvocatCommisDoffice implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,6 +43,18 @@ public class CardAvocatCommisDoffice implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,22 +1,21 @@
 package card.commune;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardChefDeRaid implements Card {
+public class CardChefDeRaid extends FactoryCard {
 
 	@Override
 	public int getAttaque() {
 		// TODO Auto-generated method stub
 		return 3;
 	}
-
+	
 	@Override
 	public int getLife() {
 		// TODO Auto-generated method stub
 		return 3;
 	}
-
+	
 	@Override
 	public int getMana() {
 		// TODO Auto-generated method stub
@@ -24,7 +23,7 @@ public class CardChefDeRaid implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -38,5 +37,17 @@ public class CardChefDeRaid implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 }

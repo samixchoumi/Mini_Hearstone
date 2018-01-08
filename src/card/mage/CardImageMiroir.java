@@ -1,12 +1,8 @@
 package card.mage;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardImageMiroir implements Card {
-
-	
-	Effect effect;
+public class CardImageMiroir extends FactoryCard {
 	
 //	public CardImageMiroir() {
 //		effect = new Effect(); //invoque deux serviteur 0/2 provocation
@@ -31,7 +27,7 @@ public class CardImageMiroir implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -46,6 +42,18 @@ public class CardImageMiroir implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

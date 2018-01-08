@@ -1,11 +1,8 @@
 package card.mage;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardExplosionDesArcanes implements Card {
-
-	Effect effect;
+public class CardExplosionDesArcanes extends FactoryCard {
 	
 //	public CardExplosionDesArcanes() {
 //		effect = new Effect(); // inflige 1 pt de degat a tout les serviteur adver
@@ -30,7 +27,7 @@ public class CardExplosionDesArcanes implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,6 +42,18 @@ public class CardExplosionDesArcanes implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

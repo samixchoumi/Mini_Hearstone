@@ -1,10 +1,8 @@
 package card.commune;
 
+import card.FactoryCard;
 
-import card.Card;
-import card.effect.Effect;
-
-public class CardSoldatDuComteDeLor implements Card {
+public class CardSoldatDuComteDeLor extends FactoryCard {
 	
 	@Override
 	public int getAttaque() {
@@ -25,7 +23,7 @@ public class CardSoldatDuComteDeLor implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -40,5 +38,17 @@ public class CardSoldatDuComteDeLor implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 }

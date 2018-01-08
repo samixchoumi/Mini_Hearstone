@@ -1,11 +1,8 @@
 package card.mage;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardMétamorphose implements Card {
-
-	Effect effect;
+public class CardMetamorphose extends FactoryCard {
 	
 //	public CardMétamorphose() {
 //		effect = new Effect(); //transforme un serviteur en serviteur 1/1 sans effet spécial
@@ -30,7 +27,7 @@ public class CardMétamorphose implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,6 +42,18 @@ public class CardMétamorphose implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

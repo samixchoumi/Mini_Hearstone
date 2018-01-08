@@ -1,11 +1,8 @@
 package card.paladin;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardConsecration implements Card {
-
-	Effect effect;
+public class CardConsecration extends FactoryCard {
 	
 //	public CardConsecration() {
 //		effect1 = new Effect(); // inflige 2 points de dégâts à tous les adversaires
@@ -30,7 +27,7 @@ public class CardConsecration implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,6 +42,18 @@ public class CardConsecration implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

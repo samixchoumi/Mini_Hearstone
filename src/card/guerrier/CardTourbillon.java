@@ -1,11 +1,8 @@
 package card.guerrier;
 
-import card.Card;
-import card.effect.Effect;
+import card.FactoryCard;
 
-public class CardTourbillon implements Card {
-
-	Effect effect;
+public class CardTourbillon extends FactoryCard  {
 	
 //	public CardTourbillon() {
 //		effect1 = new Effect(); //inflige 1 points de dégâts à TOUS les serviteurs (y compris les vôtres).
@@ -30,7 +27,7 @@ public class CardTourbillon implements Card {
 	}
 
 	@Override
-	public Effect getEffect() {
+	public String getEffect() {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -45,6 +42,18 @@ public class CardTourbillon implements Card {
 	public boolean canBeAttaque() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public void setAttaque(int atk) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setLife(int hp) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
