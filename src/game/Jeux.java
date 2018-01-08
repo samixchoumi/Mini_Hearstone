@@ -43,6 +43,7 @@ public class Jeux {
 	
 	public void observationEffectCarte(){
 		//TODO DP Observer (et DP State)
+		//CEDRIC
 	}
 	
 	public void pointDeMana(Joueur j){
