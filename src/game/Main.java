@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
@@ -13,11 +15,9 @@ public class Main {
 		Jeux jeu1 = new Jeux();
 		
 		/*
-		 * Création des joueurs
+		 * Crï¿½ation des joueurs
 		 */
-		/*
-		 * ERREUR - A corriger
-		 * 
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
 		String joueur1Pseudo = sc.nextLine();
@@ -26,8 +26,19 @@ public class Main {
 		
 		System.out.println("Joueur 1 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
 		String joueur1Heros = sc.nextLine();
+		while(!((joueur1Heros.equalsIgnoreCase("mage")) || (joueur1Heros.equalsIgnoreCase("paladin")) || (joueur1Heros.equalsIgnoreCase("guerrier")))){
+			System.out.println("Erreur lors de la saisis, veuillez choisir un bon heros !");
+			System.out.println("Joueur 1 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
+			joueur1Heros = sc.nextLine();
+		}
+			
 		System.out.println("Joueur 2 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
 		String joueur2Heros = sc.nextLine();
+		while(!((joueur2Heros.equalsIgnoreCase("mage")) || (joueur2Heros.equalsIgnoreCase("paladin")) || (joueur2Heros.equalsIgnoreCase("guerrier")))){
+			System.out.println("Erreur lors de la saisis, veuillez choisir un bon heros !");
+			System.out.println("Joueur 2 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
+			joueur2Heros = sc.nextLine();
+		}
 		
 		System.err.println("psd1+>"+joueur1Pseudo);
 		System.err.println("psd2+>"+joueur2Pseudo);
@@ -35,10 +46,11 @@ public class Main {
 		System.err.println("her2+>"+joueur2Heros);
 		Joueur j1 = new Joueur(joueur1Pseudo,joueur1Heros);
 		Joueur j2 = new Joueur(joueur2Pseudo,joueur2Heros);
-		*/
+		
+		/*
 		Joueur j1 = new Joueur("Samix", "Mage");
 		Joueur j2 = new Joueur("Cedric", "Mage");
-		
+		*/
 		jeu1.initialisationPartie(j1, j2);
 		
 		EtatJouer joue = new EtatJouer();
