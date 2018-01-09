@@ -28,10 +28,7 @@ public class CardMaitriseDuBlocage extends FactoryCard  {
 	public int getMana() {return mana;}
 
 	@Override
-	public String getEffect() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public String getEffect() {return "Effet : ";}
 
 	@Override
 	public void setAttaque(int atk) {this.attaque = atk;}
