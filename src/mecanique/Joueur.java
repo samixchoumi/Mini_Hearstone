@@ -8,6 +8,8 @@ import card.commune.CardChevaucheurDeLoup;
 import card.commune.CardSanglierBrocheroc;
 import card.commune.CardSoldatDuComteDeLor;
 import card.commune.CardYetiNoroit;
+import card.effect.EffectProvocation;
+import card.effect.EffectVolDeVie;
 import card.guerrier.CardAvocatCommisDoffice;
 import card.guerrier.CardMaitriseDuBlocage;
 import card.guerrier.CardTourbillon;
@@ -107,6 +109,7 @@ public class Joueur {
 				case 3: fc = new CardSanglierBrocheroc();
 				return fc;
 				case 4: fc = new CardSoldatDuComteDeLor();
+				        fc = new EffectProvocation(fc);
 				return fc;
 				case 5: fc = new CardYetiNoroit();
 				return fc;
