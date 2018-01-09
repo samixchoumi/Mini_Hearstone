@@ -8,9 +8,10 @@ public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	private String effect;
 	private Joueur j;
 	
-	public EffectPlus1AttaqueToutServiteur() {
+	public EffectPlus1AttaqueToutServiteur(FactoryCard fc) {
+		this.fc = fc;
 		this.name = "Plus 1 d attaque";
-		this.effect = "Plus 1 d attaque a tous les serviteurs alliés sur le plateau (tant que ce serviteur est vivant)";
+		this.effect = "Plus 1 d attaque a tous les serviteurs alliï¿½s sur le plateau (tant que ce serviteur est vivant)";
 	}
 
 	@Override
@@ -22,7 +23,7 @@ public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return this.effect;
+		return fc.getEffect()+" +1 d'attaque de tous les serviteurs ";
 	}
 
 	@Override
@@ -37,8 +38,33 @@ public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Cette carte possede un effet de "+this.getName()+".\n"+
-			this.effect;
+		return fc.toString() + "Cette carte possede un effet de "+this.getName();
 	}
 
+	@Override
+	public int getAttaque() {return 0;}
+
+	@Override
+	public void setAttaque(int atk) {}
+
+	@Override
+	public int getLife() {return 0;}
+
+	@Override
+	public void setLife(int hp) {}
+
+	@Override
+	public int getMana() {return 0;}
+
+	@Override
+	public void setCanAttaque(boolean b) {}
+
+	@Override
+	public boolean getCanAttaque() {return false;}
+
+	@Override
+	public void setCanBeAttaque(boolean b) {}
+
+	@Override
+	public boolean getCanBeAttaque() {return false;}
 }
