@@ -66,14 +66,14 @@ public class Joueur {
 	}
 
 	public void setHeros(String heros) {
-		if(heros == "Mage"){
+		if(heros.equalsIgnoreCase("Mage")){
 			this.heros = new HerosMage();
-		} else if(heros == "Guerrier"){
+		} else if(heros.equalsIgnoreCase("Guerrier")){
 			this.heros = new HerosGuerrier();
-		} else if(heros == "Paladin"){
+		} else if(heros.equalsIgnoreCase("Paladin")){
 			this.heros = new HerosPaladin();
 		}
-		System.out.println(getHeros());
+		System.out.println("Heros choisi +>" + getHeros());
 	}
 
 	public String getName() {
