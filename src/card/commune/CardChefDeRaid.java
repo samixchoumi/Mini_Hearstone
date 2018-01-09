@@ -19,55 +19,34 @@ public class CardChefDeRaid extends FactoryCard {
 	}
 
 	@Override
-	public int getAttaque() {
-		return attaque;
-	}
+	public int getAttaque() {return attaque;}
 	
 	@Override
-	public int getLife() {
-		return life;
-	}
+	public int getLife() {return life;}
 	
 	@Override
-	public int getMana() {
-		return mana;
-	}
+	public int getMana() {return mana;}
 
 	@Override
-	public String getEffect() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public String getEffect() {return "Effet : ";}
 
 	@Override
-	public void setAttaque(int atk) {
-		this.attaque = atk;
-	}
+	public void setAttaque(int atk) {this.attaque = atk;}
 
 	@Override
-	public void setLife(int hp) {
-		this.life = hp;
-	}
+	public void setLife(int hp) {this.life = hp;}
 
 	@Override
-	public void setCanAttaque(boolean b) {
-		this.canAttaque = b;
-	}
+	public void setCanAttaque(boolean b) {this.canAttaque = b;}
 
 	@Override
-	public boolean getCanAttaque() {
-		return canAttaque;
-	}
+	public boolean getCanAttaque() {return canAttaque;}
+	
+	@Override
+	public void setCanBeAttaque(boolean b) {this.canBeAttaque = b;}
 
 	@Override
-	public void setCanBeAttaque(boolean b) {
-		this.canBeAttaque = b;
-	}
-
-	@Override
-	public boolean getCanBeAttaque() {
-		return canBeAttaque;
-	}
+	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
 	public String toString(){
 		return "Chef de raid | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";

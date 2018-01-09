@@ -28,10 +28,7 @@ public class CardYetiNoroit extends FactoryCard {
 	public int getMana() {return mana;}
 
 	@Override
-	public String getEffect() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public String getEffect() {return "Effet : ";}
 
 	@Override
 	public void setAttaque(int atk) {this.attaque = atk;}
@@ -52,6 +49,6 @@ public class CardYetiNoroit extends FactoryCard {
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
 	public String toString(){
-		return "Yéti noroit | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
+		return "Yï¿½ti noroit | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
 	}
 }
