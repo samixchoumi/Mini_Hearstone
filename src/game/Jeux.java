@@ -58,6 +58,10 @@ public class Jeux {
 		//CEDRIC
 	}
 	
+	public void coutManaCarteDiffPointDeManCourant(){
+		//TODO Verifier qu'il y a assez de mana pour jouer les cartes
+	}
+	
 	public void pointDeMana(Joueur j){
 		//TODO +1 par tour (max 10)
 		int manaJoueur = j.getMana();

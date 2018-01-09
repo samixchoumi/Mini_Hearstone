@@ -44,8 +44,13 @@ public class Main {
 		System.err.println("psd2+>"+joueur2Pseudo);
 		System.err.println("her1+>"+joueur1Heros);
 		System.err.println("her2+>"+joueur2Heros);
-		Joueur j1 = new Joueur(joueur1Pseudo,joueur1Heros);
-		Joueur j2 = new Joueur(joueur2Pseudo,joueur2Heros);
+		// a ameliorer
+		Joueur j2 = null;
+		Joueur j1 = null;
+		j2 = new Joueur(joueur2Pseudo);
+		j1 = new Joueur(joueur1Pseudo,joueur1Heros, j2);
+		j2.setJoueurAdv(j1);
+		j2.setHeros(joueur2Heros);
 		
 		/*
 		Joueur j1 = new Joueur("Samix", "Mage");
@@ -65,7 +70,6 @@ public class Main {
 		jeu1.changementDeTour(j1, j2);
 		jeu1.changementDeTour(j1, j2);
 		
-		// TODO Auto-generated method stub
 		//TODO Scanner
 	}
 

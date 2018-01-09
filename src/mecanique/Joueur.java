@@ -20,8 +20,12 @@ import card.paladin.CardBenedictionDePuissance;
 import card.paladin.CardChampionFrisselame;
 import card.paladin.CardConsecration;
 import hero.*;
+import power.PowerGuerrier;
+import power.PowerMage;
+import power.PowerPaladin;
 
 public class Joueur {
+	private Joueur joueurAdv;
 	private String name;
 	private boolean enVie;
 	private int mana;
@@ -29,6 +33,25 @@ public class Joueur {
 	private Etat etat;
 	private ArrayList<FactoryCard> listeCarteDuJoueurMain;
 	private ArrayList<FactoryCard> listeCarteEnJeux;
+
+	public Joueur(String name, String heros, Joueur joueurAdv) {
+		this.joueurAdv = joueurAdv;
+		this.name = name;
+		this.enVie = true;
+		this.mana = 1;
+		setHeros(heros);
+		listeCarteDuJoueurMain = new ArrayList<>();
+		listeCarteEnJeux = new ArrayList<>();
+	}
+	
+	public Joueur(String name) {
+		this.joueurAdv = null;
+		this.name = name;
+		this.enVie = true;
+		this.mana = 1;
+		listeCarteDuJoueurMain = new ArrayList<>();
+		listeCarteEnJeux = new ArrayList<>();
+	}
 	
 	public ArrayList<FactoryCard> getListeCarteDuJoueurMain() {
 		return listeCarteDuJoueurMain;
@@ -45,14 +68,13 @@ public class Joueur {
 	public void setListeCarteEnJeux(ArrayList<FactoryCard> listeCarteEnJeux) {
 		this.listeCarteEnJeux = listeCarteEnJeux;
 	}
+	
+	public Joueur getJoueurAdv() {
+		return joueurAdv;
+	}
 
-	public Joueur(String name, String heros) {
-		this.name = name;
-		this.enVie = true;
-		this.mana = 1;
-		setHeros(heros);
-		listeCarteDuJoueurMain = new ArrayList<>();
-		listeCarteEnJeux = new ArrayList<>();
+	public void setJoueurAdv(Joueur joueurAdv) {
+		this.joueurAdv = joueurAdv;
 	}
 	
 	public boolean isEnVie() {
@@ -69,13 +91,17 @@ public class Joueur {
 
 	public void setHeros(String heros) {
 		if(heros.equalsIgnoreCase("Mage")){
-			this.heros = new HerosMage();
+			this.heros = new HerosMage(joueurAdv);
+			this.heros = new PowerMage(this.heros);
 		} else if(heros.equalsIgnoreCase("Guerrier")){
-			this.heros = new HerosGuerrier();
+			this.heros = new HerosGuerrier(joueurAdv);
+			this.heros = new PowerGuerrier(this.heros);
 		} else if(heros.equalsIgnoreCase("Paladin")){
-			this.heros = new HerosPaladin();
+			this.heros = new HerosPaladin(joueurAdv);
+			this.heros = new PowerPaladin(this.heros);
 		}
 		System.out.println("Heros choisi +>" + getHeros());
+		System.out.println("Pouvoir du hero +>" +getHeros().getPower());
 	}
 
 	public String getName() {

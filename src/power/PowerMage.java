@@ -1,40 +1,40 @@
 package power;
 
+import hero.Heros;
 import mecanique.Joueur;
 import power.Power;
 
-public class PowerMage implements Power {
+public class PowerMage extends Power {
 	
 	private String name;
 	private String effect;
-	private Joueur joueurAdversaire;
 	
-	public PowerMage() {
+	public PowerMage(Heros heros) {
+		this.heros = heros;
 		this.name = "Boule de feu";
-		this.effect = "Inflige un point de degat a  "+this.joueurAdversaire.getName();
+		this.effect = "Inflige un point de degat aï¿½ "+ heros.getJoueurAdversaire().getName();
 	}
 
-	@Override
-	public String getName() {
-		// TODO Auto-generated method stub
-		return this.name;
-	}
+	public String getName() {return this.name;}
+	public String getPower() {return heros.getPower() + this.getName();}
 
-	@Override
-	public String getEffect() {
-		// TODO Auto-generated method stub
-		return this.effect;
-	}
-
-	@Override
 	public void usePower() {
 		// TODO Auto-generated method stub
-		System.out.println(toString());
-		joueurAdversaire.getHeros().setLife(joueurAdversaire.getHeros().getLife() - 1);
+		System.out.println("Utilise sa capacite special : " + this.name + " !"+
+				"\n" + this.effect);
 	}
+	
+	public String toString(){return heros.toString();}
 
-	public String toString(){
-		return "Utilise sa capacite special : " + this.name + " !"+
-				"\n" + this.effect;
-	}
+	@Override
+	public int getLife() {return heros.getLife();}
+
+	@Override
+	public void setLife(int life) {}
+
+	@Override
+	public String typeHero() {return heros.typeHero();}
+
+	@Override
+	public Joueur getJoueurAdversaire() {return heros.getJoueurAdversaire();}
 }

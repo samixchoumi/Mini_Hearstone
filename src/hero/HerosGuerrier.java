@@ -1,12 +1,15 @@
 package hero;
 
+import mecanique.Joueur;
 import power.Power;
 
-public class HerosGuerrier implements Heros {
+public class HerosGuerrier extends Heros {
 
 	private int life;
+	private Joueur joueurAdv;
 	
-	public HerosGuerrier(){
+	public HerosGuerrier(Joueur joueurAdv){
+		this.joueurAdv = joueurAdv;
 		this.life = 30;
 	}
 	
@@ -20,11 +23,16 @@ public class HerosGuerrier implements Heros {
 	public String typeHero() {return "Guerrier";}
 
 	@Override
-	public Power getPower() {
+	public String getPower() {
 		// TODO Auto-generated method stub
-		return null;
+		return "Pouvoir :";
 	}
 	
 	public String toString(){return typeHero();}
+
+	@Override
+	public Joueur getJoueurAdversaire() {
+		return joueurAdv;
+	}
 
 }

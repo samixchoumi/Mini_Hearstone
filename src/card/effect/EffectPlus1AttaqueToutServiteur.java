@@ -42,29 +42,29 @@ public class EffectPlus1AttaqueToutServiteur extends EffectDecorator {
 	}
 
 	@Override
-	public int getAttaque() {return 0;}
+	public int getAttaque() {return fc.getAttaque();}
 
 	@Override
 	public void setAttaque(int atk) {}
 
 	@Override
-	public int getLife() {return 0;}
+	public int getLife() {return fc.getLife();}
 
 	@Override
 	public void setLife(int hp) {}
 
 	@Override
-	public int getMana() {return 0;}
+	public int getMana() {return fc.getMana();}
 
 	@Override
 	public void setCanAttaque(boolean b) {}
 
 	@Override
-	public boolean getCanAttaque() {return false;}
+	public boolean getCanAttaque() {return fc.getCanBeAttaque();}
 
 	@Override
 	public void setCanBeAttaque(boolean b) {}
 
 	@Override
-	public boolean getCanBeAttaque() {return false;}
+	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
 }
