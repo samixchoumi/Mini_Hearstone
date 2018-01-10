@@ -1,6 +1,7 @@
 package card.mage;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class CardExplosionDesArcanes extends FactoryCard {
 	
@@ -9,14 +10,30 @@ public class CardExplosionDesArcanes extends FactoryCard {
 	private int mana;
 	private boolean canAttaque;
 	private boolean canBeAttaque;
+	private Joueur j;
+	private Joueur jAdv;
 
-	public CardExplosionDesArcanes() {
+	public CardExplosionDesArcanes(Joueur j, Joueur jAdv) {
+		this.j            = j;
+		this.jAdv         = jAdv;
 		this.attaque      = 0; //Sort
 		this.life         = 0; //Sort
 		this.mana         = 2;
 		this.canAttaque   = false; //Sort
 		this.canBeAttaque = false; //Sort
 	}
+
+	@Override
+	public Joueur getJoueurAdv() {return jAdv;}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {this.jAdv = jAdv;}
+	
+	@Override
+	public Joueur getJoueur() {return j;}
+
+	@Override
+	public void setJoueur(Joueur j) {this.j = j;}
 
 	@Override
 	public int getAttaque() {return attaque;}

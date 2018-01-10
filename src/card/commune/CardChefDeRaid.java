@@ -11,9 +11,11 @@ public class CardChefDeRaid extends FactoryCard {
 	private boolean canAttaque;
 	private boolean canBeAttaque;
 	private Joueur j;
+	private Joueur jAdv;
 
-	public CardChefDeRaid(Joueur j) {
+	public CardChefDeRaid(Joueur j, Joueur jAdv) {
 		this.j            = j;
+		this.jAdv         = jAdv;
 		this.attaque      = 2;
 		this.life         = 2;
 		this.mana         = 3;
@@ -21,8 +23,16 @@ public class CardChefDeRaid extends FactoryCard {
 		this.canBeAttaque = true;
 	}
 
+	@Override
+	public Joueur getJoueurAdv() {return jAdv;}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {this.jAdv = jAdv;}
+	
+	@Override
 	public Joueur getJoueur() {return j;}
 
+	@Override
 	public void setJoueur(Joueur j) {this.j = j;}
 	
 	@Override

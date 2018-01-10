@@ -14,4 +14,8 @@ public abstract class FactoryCard{
 	public abstract boolean getCanAttaque();
 	public abstract void setCanBeAttaque(boolean b);
 	public abstract boolean getCanBeAttaque();
+	public abstract Joueur getJoueur();
+	public abstract void setJoueur(Joueur j);
+	public abstract Joueur getJoueurAdv();
+	public abstract void setJoueurAdv(Joueur jAdv);
 }

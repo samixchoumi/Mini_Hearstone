@@ -1,6 +1,7 @@
 package card.effect;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class EffectProvocation extends EffectDecorator {
 	private String name;
@@ -26,8 +27,8 @@ public class EffectProvocation extends EffectDecorator {
 
 	@Override
 	public void useEffect() {
-		// TODO Auto-generated method stub
-		
+		// TODO A METTRE EN PLACE AVEC LOBSERVEUR
+		System.out.println(effect);
 	}
 	
 	public String toString() {
@@ -62,5 +63,17 @@ public class EffectProvocation extends EffectDecorator {
 	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
 	
 	@Override
-	public void setMana(int mana) {}
+	public void setMana(int mana) {fc.setMana(mana);}
+
+	@Override
+	public Joueur getJoueur() {return fc.getJoueur();}
+
+	@Override
+	public void setJoueur(Joueur j) {fc.setJoueur(j);}
+	
+	@Override
+	public Joueur getJoueurAdv() {return fc.getJoueurAdv();}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {fc.setJoueurAdv(jAdv);}
 }

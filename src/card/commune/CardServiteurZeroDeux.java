@@ -1,6 +1,7 @@
 package card.commune;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class CardServiteurZeroDeux extends FactoryCard{
 
@@ -9,14 +10,30 @@ public class CardServiteurZeroDeux extends FactoryCard{
 	private int mana;
 	private boolean canAttaque;
 	private boolean canBeAttaque;
+	private Joueur j;
+	private Joueur jAdv;
 
-	public CardServiteurZeroDeux() {
+	public CardServiteurZeroDeux(Joueur j, Joueur jAdv) {
+		this.j            = j;
+		this.jAdv         = jAdv;
 		this.attaque      = 0;
 		this.life         = 2;
 		this.mana         = 0;
 		this.canAttaque   = false;
 		this.canBeAttaque = true;
 	}
+	
+	@Override
+	public Joueur getJoueurAdv() {return jAdv;}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {this.jAdv = jAdv;}
+	
+	@Override
+	public Joueur getJoueur() {return j;}
+
+	@Override
+	public void setJoueur(Joueur j) {this.j = j;}
 
 	@Override
 	public int getAttaque() {return attaque;}

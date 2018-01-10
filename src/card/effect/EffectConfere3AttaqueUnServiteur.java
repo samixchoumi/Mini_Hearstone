@@ -1,6 +1,7 @@
 package card.effect;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
 	private String name;
@@ -26,8 +27,9 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
 
     @Override
     public void useEffect() { 
-        // TODO Auto-generated method stub
-
+    	for(int i = 0;i < getJoueur().getListeCarteEnJeux().size() ;i++){
+    		getJoueur().getListeCarteEnJeux().get(getJoueur().getValChoisi()).setAttaque(getJoueur().getListeCarteEnJeux().get(getJoueur().getValChoisi()).getAttaque() + 3);
+    	}
     }
 
     public String toString() {
@@ -61,9 +63,18 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
     @Override
     public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
 
+    @Override
+	public void setMana(int mana) {fc.setMana(mana);}
+
 	@Override
-	public void setMana(int mana) {
-		// TODO Auto-generated method stub
-		
-	}
+	public Joueur getJoueur() {return fc.getJoueur();}
+
+	@Override
+	public void setJoueur(Joueur j) {fc.setJoueur(j);}
+	
+	@Override
+	public Joueur getJoueurAdv() {return fc.getJoueurAdv();}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {fc.setJoueurAdv(jAdv);}
 }

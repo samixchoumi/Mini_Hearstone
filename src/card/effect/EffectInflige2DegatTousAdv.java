@@ -1,6 +1,7 @@
 package card.effect;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	private String name;
@@ -26,7 +27,10 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 
 	@Override
 	public void useEffect() { 
-		// TODO Auto-generated method stub
+		for(FactoryCard c : getJoueurAdv().getListeCarteEnJeux()){
+			int life = c.getLife();
+			c.setLife(life-2);
+		}
 	}
 	
 	public String toString() {
@@ -61,5 +65,17 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
 	
 	@Override
-	public void setMana(int mana) {}
+	public void setMana(int mana) {fc.setMana(mana);}
+
+	@Override
+	public Joueur getJoueur() {return fc.getJoueur();}
+
+	@Override
+	public void setJoueur(Joueur j) {fc.setJoueur(j);}
+	
+	@Override
+	public Joueur getJoueurAdv() {return fc.getJoueurAdv();}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {fc.setJoueurAdv(jAdv);}
 }

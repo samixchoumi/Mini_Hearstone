@@ -1,6 +1,7 @@
 package card.commune;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class CardChevaucheurDeLoup extends FactoryCard {
 
@@ -9,8 +10,12 @@ public class CardChevaucheurDeLoup extends FactoryCard {
 	private int mana;
 	private boolean canAttaque;
 	private boolean canBeAttaque;
+	private Joueur j;
+	private Joueur jAdv;
 
-	public CardChevaucheurDeLoup() {
+	public CardChevaucheurDeLoup(Joueur j, Joueur jAdv) {
+		this.j            = j;
+		this.jAdv         = jAdv;
 		this.attaque      = 3;
 		this.life         = 1;
 		this.mana         = 3;
@@ -18,6 +23,19 @@ public class CardChevaucheurDeLoup extends FactoryCard {
 		this.canBeAttaque = true;
 	}
 
+	@Override
+	public Joueur getJoueurAdv() {return jAdv;}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {this.jAdv = jAdv;}
+
+	
+	@Override
+	public Joueur getJoueur() {return j;}
+
+	@Override
+	public void setJoueur(Joueur j) {this.j = j;}
+	
 	@Override
 	public int getAttaque() {return attaque;}
 	

@@ -1,6 +1,8 @@
 package card.effect;
 
 import card.FactoryCard;
+import card.commune.CardServiteurZeroDeux;
+import mecanique.Joueur;
 
 /**
  * Created by E178220S on 10/01/18.
@@ -29,7 +31,8 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
 
     @Override
     public void useEffect() {
-        // TODO Auto-generated method stub
+    	getJoueur().getListeCarteEnJeux().add(new CardServiteurZeroDeux(getJoueur(), getJoueurAdv()));
+    	getJoueur().getListeCarteEnJeux().add(new CardServiteurZeroDeux(getJoueur(), getJoueurAdv()));
     }
 
     public String toString() {
@@ -63,9 +66,19 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
     @Override
     public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
 
+    @Override
+	public void setMana(int mana) {fc.setMana(mana);}
+
 	@Override
-	public void setMana(int mana) {
-		// TODO Auto-generated method stub
-		
-	}
+	public Joueur getJoueur() {return fc.getJoueur();}
+
+	@Override
+	public void setJoueur(Joueur j) {fc.setJoueur(j);}
+	
+	@Override
+	public Joueur getJoueurAdv() {return fc.getJoueurAdv();}
+
+	@Override
+	public void setJoueurAdv(Joueur jAdv) {fc.setJoueurAdv(jAdv);}
+
 }

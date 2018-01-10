@@ -3,34 +3,36 @@ package card.effect;
 import card.FactoryCard;
 import mecanique.Joueur;
 
-public class EffectCharge extends EffectDecorator {
+public class EffectPlus1AttaqueToutServiteurAllie extends EffectDecorator {
 	private String name;
 	private String effect;
 	
-	public EffectCharge(FactoryCard fc) {
+	public EffectPlus1AttaqueToutServiteurAllie(FactoryCard fc) {
 		this.fc = fc;
-		this.name = "Charge";
-		this.effect = "Attaque directement";
+		this.name = "Plus 1 d attaque";
+		this.effect = "Plus 1 d attaque a tous les serviteurs alli�s sur le plateau (tant que ce serviteur est vivant)";
 	}
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return this.name;
 	}
 
 	@Override
-	public String getEffect() {
-		// TODO Auto-generated method stub
-		return fc.getEffect()+" Charge ";
+	public String getEffect() {return fc.getEffect()+" +1 d'attaque de tous les serviteurs ";}
+
+	@Override
+	public void useEffect() {
+		for(FactoryCard c : getJoueur().getListeCarteEnJeux()){
+			int attack = c.getAttaque();
+			c.setAttaque(attack+1);
+		}
+		//TODO VERIFIER LEFFET TANT QUE SERVITEUR VIVANT
 	}
 
 	@Override
-	public void useEffect() { 
-		setCanAttaque(true);
-	}
-	
 	public String toString() {
+		// TODO Auto-generated method stub
 		return fc.toString() + "Cette carte possede un effet de "+this.getName();
 	}
 
@@ -63,13 +65,13 @@ public class EffectCharge extends EffectDecorator {
 	
 	@Override
 	public void setMana(int mana) {fc.setMana(mana);}
-	
+
 	@Override
 	public Joueur getJoueur() {return fc.getJoueur();}
 
 	@Override
 	public void setJoueur(Joueur j) {fc.setJoueur(j);}
-	
+
 	@Override
 	public Joueur getJoueurAdv() {return fc.getJoueurAdv();}
 
