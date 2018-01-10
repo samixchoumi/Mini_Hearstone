@@ -21,7 +21,7 @@ public class Main {
 		Jeux jeu1 = new Jeux();
 		
 		/*
-		 * Cr�ation des joueurs
+		 * Creation des joueurs
 		 */
 		
 		Scanner sc = new Scanner(System.in);

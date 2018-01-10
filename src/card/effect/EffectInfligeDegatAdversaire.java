@@ -5,14 +5,14 @@ import card.FactoryCard;
 /**
  * Created by E178220S on 10/01/18.
  */
-public class EffectInfligeaDegatAdversaire extends EffectDecorator {
+public class EffectInfligeDegatAdversaire extends EffectDecorator {
     private String name;
     private String effect;
 
-    public EffectInfligeaDegatAdversaire(FactoryCard fc) {
+    public EffectInfligeDegatAdversaire(FactoryCard fc) {
         this.fc = fc;
         this.name = "ExplosionDesArcanes";
-        this.effect = "Inflige 1 point de dégâts à tous les serviteurs adverses";
+        this.effect = "Inflige 1 point de degats a� tous les serviteurs adverses";
     }
 
     @Override
@@ -24,7 +24,7 @@ public class EffectInfligeaDegatAdversaire extends EffectDecorator {
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Charge ";
+        return fc.getEffect()+" Explosion Des Arcanes ";
     }
 
     @Override
@@ -63,4 +63,10 @@ public class EffectInfligeaDegatAdversaire extends EffectDecorator {
 
     @Override
     public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
+
+	@Override
+	public void setMana(int mana) {
+		// TODO Auto-generated method stub
+		
+	}
 }

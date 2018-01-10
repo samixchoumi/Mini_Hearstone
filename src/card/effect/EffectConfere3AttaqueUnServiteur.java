@@ -2,17 +2,14 @@ package card.effect;
 
 import card.FactoryCard;
 
-/**
- * Created by E178220S on 10/01/18.
- */
-public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
-    private String name;
+public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
+	private String name;
     private String effect;
 
-    public EffectInvoqueDeuxServiteurs(FactoryCard fc) {
+    public EffectConfere3AttaqueUnServiteur(FactoryCard fc) {
         this.fc = fc;
-        this.name = "Image miroir";
-        this.effect = "Invoque deux serviteurs 0/2 avec provocation";
+        this.name = "Benediction de puissance";
+        this.effect = "Confère +3 d’attaque à un serviteur";
     }
 
     @Override
@@ -24,12 +21,13 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Image miroir ";
+        return fc.getEffect()+" Benediction de puissance";
     }
 
     @Override
-    public void useEffect() {
+    public void useEffect() { 
         // TODO Auto-generated method stub
+
     }
 
     public String toString() {

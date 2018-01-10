@@ -2,17 +2,14 @@ package card.effect;
 
 import card.FactoryCard;
 
-/**
- * Created by E178220S on 10/01/18.
- */
-public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
-    private String name;
+public class Effect1DegatTOUSServiteur extends EffectDecorator {
+	private String name;
     private String effect;
 
-    public EffectInvoqueDeuxServiteurs(FactoryCard fc) {
+    public Effect1DegatTOUSServiteur(FactoryCard fc) {
         this.fc = fc;
-        this.name = "Image miroir";
-        this.effect = "Invoque deux serviteurs 0/2 avec provocation";
+        this.name = "Tourbillon";
+        this.effect = "Inflige 1 degat a tous les serviteurs";
     }
 
     @Override
@@ -24,12 +21,13 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Image miroir ";
+        return fc.getEffect()+" Tourbillon";
     }
 
     @Override
-    public void useEffect() {
+    public void useEffect() { 
         // TODO Auto-generated method stub
+
     }
 
     public String toString() {
