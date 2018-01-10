@@ -27,7 +27,6 @@ public class EffectCharge extends EffectDecorator {
 	@Override
 	public void useEffect() { //Instaurer le dp d etat de tel sorte que l etat passe directe a l etat d attaque
 		// TODO Auto-generated method stub
-		fc.setCanAttaque(true);
 	}
 	
 	public String toString() {
@@ -60,4 +59,7 @@ public class EffectCharge extends EffectDecorator {
 
 	@Override
 	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
+	
+	@Override
+	public void setMana(int mana) {}
 }

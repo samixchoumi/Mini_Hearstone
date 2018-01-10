@@ -66,4 +66,7 @@ public class EffectVolDeVie extends EffectDecorator {
 
 	@Override
 	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
+	
+	@Override
+	public void setMana(int mana) {}
 }

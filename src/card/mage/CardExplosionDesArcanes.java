@@ -48,6 +48,9 @@ public class CardExplosionDesArcanes extends FactoryCard {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Explosion des arcanes | " +getMana()+"mana | "+" Sort |" ;
 	}

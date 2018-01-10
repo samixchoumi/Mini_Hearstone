@@ -8,6 +8,12 @@ import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
 
+//TODO METTRE LES MEME CARACTERISTIQUES AUX CARTES AINSI QU AUX EFFETS POUR FAIRE LES SET CORRECTEMENT DANS LES EFFETS. //Samix
+//TODO CREER LES EFFETS AINSI QUE LES AJOUTER AU JOUEUR //Cedricmart8
+//TODO DP Observer pour utiliser les effets quand une carte est mise en jeux //Cedricmart8
+//TODO Javadoc sur decorator et factory //Samix
+//TODO faire les actions du tour //Samix et cedricmart8
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -67,8 +73,13 @@ public class Main {
 		System.out.println("joueur1 : " + j1.getEtat());
 		System.out.println("joueur2 : " + j2.getEtat());
 		
-		jeu1.changementDeTour(j1, j2);
-		jeu1.changementDeTour(j1, j2);
+		while(j1.getHeros().getLife() != 0 || j1.getHeros().getLife() != 0){
+			String finTour = sc.nextLine();
+			if(finTour.equals("finTour"))
+				jeu1.changementDeTour(j1, j2);
+			else
+				break;
+		}
 		
 		//TODO Scanner
 	}

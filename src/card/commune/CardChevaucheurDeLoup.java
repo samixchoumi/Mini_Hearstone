@@ -48,6 +48,9 @@ public class CardChevaucheurDeLoup extends FactoryCard {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Chevaucheur de loup | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
 	}

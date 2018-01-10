@@ -48,6 +48,9 @@ public class CardBenedictionDePuissance extends FactoryCard{
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Benediction de puissance | " +getMana()+"mana | "+" Sort |" ;
 	}

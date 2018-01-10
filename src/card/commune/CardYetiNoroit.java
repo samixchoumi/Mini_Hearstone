@@ -48,6 +48,9 @@ public class CardYetiNoroit extends FactoryCard {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Y�ti noroit | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
 	}

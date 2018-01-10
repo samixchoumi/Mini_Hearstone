@@ -60,4 +60,7 @@ public class EffectProvocation extends EffectDecorator {
 
 	@Override
 	public boolean getCanBeAttaque() {return fc.getCanBeAttaque();}
+	
+	@Override
+	public void setMana(int mana) {}
 }

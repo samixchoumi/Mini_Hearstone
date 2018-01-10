@@ -48,6 +48,9 @@ public class CardSoldatDuComteDeLor extends FactoryCard {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Soldat du comt�-de-l�or | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
 	}

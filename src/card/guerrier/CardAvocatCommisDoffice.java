@@ -48,6 +48,9 @@ public class CardAvocatCommisDoffice extends FactoryCard {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Avocat commis d'office | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
 	}

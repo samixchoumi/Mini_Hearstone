@@ -48,6 +48,9 @@ public class CardMaitriseDuBlocage extends FactoryCard  {
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Maitrise du blocage | " +getMana()+"mana | "+" Sort |" ;
 	}

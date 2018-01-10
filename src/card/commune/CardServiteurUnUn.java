@@ -48,6 +48,9 @@ public class CardServiteurUnUn extends FactoryCard{
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
 	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
+	
 	public String toString(){
 		return "Serviteur uno onu | "+getAttaque()+" atk | "+getLife()+" hp |";
 	}

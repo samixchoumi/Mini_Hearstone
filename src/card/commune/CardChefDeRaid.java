@@ -1,6 +1,7 @@
 package card.commune;
 
 import card.FactoryCard;
+import mecanique.Joueur;
 
 public class CardChefDeRaid extends FactoryCard {
 
@@ -9,8 +10,10 @@ public class CardChefDeRaid extends FactoryCard {
 	private int mana;
 	private boolean canAttaque;
 	private boolean canBeAttaque;
+	private Joueur j;
 
-	public CardChefDeRaid() {
+	public CardChefDeRaid(Joueur j) {
+		this.j            = j;
 		this.attaque      = 2;
 		this.life         = 2;
 		this.mana         = 3;
@@ -18,6 +21,10 @@ public class CardChefDeRaid extends FactoryCard {
 		this.canBeAttaque = true;
 	}
 
+	public Joueur getJoueur() {return j;}
+
+	public void setJoueur(Joueur j) {this.j = j;}
+	
 	@Override
 	public int getAttaque() {return attaque;}
 	
@@ -47,6 +54,9 @@ public class CardChefDeRaid extends FactoryCard {
 
 	@Override
 	public boolean getCanBeAttaque() {return canBeAttaque;}
+	
+	@Override
+	public void setMana(int mana) {this.mana = mana;}
 	
 	public String toString(){
 		return "Chef de raid | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";

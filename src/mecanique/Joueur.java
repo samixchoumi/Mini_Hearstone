@@ -128,7 +128,7 @@ public class Joueur {
 		Joueur j1 = this;
 		if(j1.getHeros().typeHero() == "Mage"){
 			switch (random) {
-				case 1: fc = new CardChefDeRaid();
+				case 1: fc = new CardChefDeRaid(this);
 				return fc;
 				case 2: fc = new CardChevaucheurDeLoup();
 				return fc;
@@ -148,7 +148,7 @@ public class Joueur {
 			}
 		} else if(j1.getHeros().typeHero() == "Guerrier"){
 			switch (random) {
-				case 1: fc = new CardChefDeRaid();
+				case 1: fc = new CardChefDeRaid(this);
 				return fc;
 				case 2: fc = new CardChevaucheurDeLoup();
 				return fc;
@@ -167,7 +167,7 @@ public class Joueur {
 			}
 		} else if(j1.getHeros().typeHero() == "Paladin"){
 			switch (random) {
-				case 1: fc = new CardChefDeRaid();
+				case 1: fc = new CardChefDeRaid(this);
 				return fc;
 				case 2: fc = new CardChevaucheurDeLoup();
 				return fc;
