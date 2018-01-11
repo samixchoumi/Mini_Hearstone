@@ -2,17 +2,9 @@ package game;
 
 import java.util.Scanner;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
-
-//TODO METTRE LES MEME CARACTERISTIQUES AUX CARTES AINSI QU AUX EFFETS POUR FAIRE LES SET CORRECTEMENT DANS LES EFFETS. //Samix
-//TODO CREER LES EFFETS AINSI QUE LES AJOUTER AU JOUEUR //Cedricmart8
-//TODO DP Observer pour utiliser les effets quand une carte est mise en jeux //Cedricmart8
-//TODO Javadoc sur decorator et factory //Samix
-//TODO faire les actions du tour //Samix et cedricmart8
 
 public class Main {
 
@@ -97,8 +89,16 @@ public class Main {
 		}
 		
 		while(j1.getHeros().getLife() != 0 || j1.getHeros().getLife() != 0){
-			String finTour = sc.nextLine();
-			if(finTour.equalsIgnoreCase("finTour"))
+			String choix = sc.nextLine();
+			//if(choix.equalsIgnoreCase("attaqueCarte"))
+			
+			//if(choix.equalsIgnoreCase("attaqueHero"))
+			
+			//if(choix.equalsIgnoreCase("joueCarte"))
+			
+			//if(choix.equalsIgnoreCase("joueHeroPower"))
+			
+			if(choix.equalsIgnoreCase("finTour"))
 				jeu1.changementDeTour(j1, j2);
 			else
 				break;

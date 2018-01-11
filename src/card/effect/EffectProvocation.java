@@ -28,6 +28,9 @@ public class EffectProvocation extends EffectDecorator {
 	@Override
 	public void useEffect() {
 		System.out.println(effect);
+		
+		getJoueur().getHeros().setCanBeAttaque(false);
+		
 		for(FactoryCard c : getJoueur().getListeCarteEnJeux()){
 			if(c.getEffect().contains(getName())){
 				setCanBeAttaque(true);
