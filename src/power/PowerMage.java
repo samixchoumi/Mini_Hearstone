@@ -40,4 +40,10 @@ public class PowerMage extends Power {
 	
 	@Override
 	public Joueur getJoueur() {return heros.getJoueur();}
+	
+	@Override
+	public boolean getCanBeAttaque() {return heros.getCanBeAttaque();}
+
+	@Override
+	public void setCanBeAttaque(boolean b) {heros.setCanBeAttaque(b);}
 }

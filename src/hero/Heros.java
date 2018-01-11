@@ -40,4 +40,15 @@ public abstract class Heros {
 	 */
 	public abstract Joueur getJoueurAdversaire();
 	
+	/**
+	 * @return si le héros peut être attaqué ou non
+	 */
+	public abstract boolean getCanBeAttaque();
+	
+	/**
+	 * Met a jour si le héros peut être attaqué ou non
+	 * @param b étant la valeur indiquant si le héros peut être attaqué ou non
+	 */
+	public abstract void setCanBeAttaque(boolean b);
+	
 }

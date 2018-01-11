@@ -8,11 +8,13 @@ public class HerosGuerrier extends Heros {
 	private int life;
 	private Joueur joueurAdv;
 	private Joueur joueur;
+	private boolean canBeAttaque;
 	
 	public HerosGuerrier(Joueur jAdv, Joueur j){
 		this.joueur = j;
 		this.joueurAdv = jAdv;
 		this.life = 30;
+		this.canBeAttaque = true;
 	}
 	
 	@Override
@@ -38,4 +40,9 @@ public class HerosGuerrier extends Heros {
 	@Override
 	public Joueur getJoueur() {return joueur;}
 
+	@Override
+	public boolean getCanBeAttaque() {return canBeAttaque;}
+
+	@Override
+	public void setCanBeAttaque(boolean b) {this.canBeAttaque = b;}
 }
