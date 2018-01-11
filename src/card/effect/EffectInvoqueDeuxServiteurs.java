@@ -31,12 +31,14 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
 
     @Override
     public void useEffect() {
-    	getJoueur().getListeCarteEnJeux().add(new CardServiteurZeroDeux(getJoueur(), getJoueurAdv()));
-    	getJoueur().getListeCarteEnJeux().add(new CardServiteurZeroDeux(getJoueur(), getJoueurAdv()));
+    	FactoryCard fc = new CardServiteurZeroDeux(getJoueur(), getJoueurAdv());
+    	            fc = new EffectProvocation(fc);
+    	getJoueur().getListeCarteEnJeux().add(fc);
+    	getJoueur().getListeCarteEnJeux().add(fc);
     }
 
     public String toString() {
-        return fc.toString() + "Cette carte possede un effet de "+this.getName();
+        return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
     }
 
     @Override

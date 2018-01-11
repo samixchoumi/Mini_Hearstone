@@ -13,7 +13,7 @@ public class EffectInfligeDegatAdversaire extends EffectDecorator {
     public EffectInfligeDegatAdversaire(FactoryCard fc) {
         this.fc = fc;
         this.name = "ExplosionDesArcanes";
-        this.effect = "Inflige 1 point de degats a� tous les serviteurs adverses";
+        this.effect = "Inflige 1 point de degats a tous les serviteurs adverses";
     }
 
     @Override
@@ -37,7 +37,7 @@ public class EffectInfligeDegatAdversaire extends EffectDecorator {
     }
 
     public String toString() {
-        return fc.toString() + "Cette carte possede un effet de "+this.getName();
+        return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
     }
 
     @Override

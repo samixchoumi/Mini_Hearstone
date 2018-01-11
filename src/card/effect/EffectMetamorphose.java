@@ -11,7 +11,7 @@ public class EffectMetamorphose extends EffectDecorator{
 	public EffectMetamorphose(FactoryCard fc) {
 		this.fc = fc;
 		this.name = "Metamorphose";
-		this.effect = "Transforme un serviteur en serviteur 1/1 sans effet sp�cial";
+		this.effect = "Transforme un serviteur en serviteur 1/1 sans effet special";
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class EffectMetamorphose extends EffectDecorator{
 	}
 	
 	public String toString() {
-		return fc.toString() + "Cette carte possede un effet de "+this.getName();
+		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 
 	@Override

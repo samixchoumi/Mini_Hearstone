@@ -27,12 +27,18 @@ public class EffectProvocation extends EffectDecorator {
 
 	@Override
 	public void useEffect() {
-		// TODO A METTRE EN PLACE AVEC LOBSERVEUR
 		System.out.println(effect);
+		for(FactoryCard c : getJoueur().getListeCarteEnJeux()){
+			if(c.getEffect().contains(getName())){
+				setCanBeAttaque(true);
+			}else{
+				setCanBeAttaque(false);
+			}
+		}
 	}
 	
 	public String toString() {
-		return fc.toString() + "Cette carte possede un effet de "+this.getName();
+		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 	
 	@Override

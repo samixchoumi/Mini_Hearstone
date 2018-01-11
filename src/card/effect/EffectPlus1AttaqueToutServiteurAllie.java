@@ -10,7 +10,7 @@ public class EffectPlus1AttaqueToutServiteurAllie extends EffectDecorator {
 	public EffectPlus1AttaqueToutServiteurAllie(FactoryCard fc) {
 		this.fc = fc;
 		this.name = "Plus 1 d attaque";
-		this.effect = "Plus 1 d attaque a tous les serviteurs alli�s sur le plateau (tant que ce serviteur est vivant)";
+		this.effect = "Plus 1 d attaque a tous les serviteurs allies sur le plateau (tant que ce serviteur est vivant)";
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class EffectPlus1AttaqueToutServiteurAllie extends EffectDecorator {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return fc.toString() + "Cette carte possede un effet de "+this.getName();
+		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 
 	@Override

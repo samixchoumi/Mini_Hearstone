@@ -69,8 +69,12 @@ public class Main {
 		if(initialisation == 1){
 			joue.etatJouer(j1);
 			enAttente.etatJouer(j2);
-			jeu1.affichageBoard(j1, j2);
 			
+			//clearscreen
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			
+			jeu1.affichageBoard(j1, j2);
+						
 			//test
 			System.out.println("------------------Etat de depart------------------");
 			System.out.println(j1.getName() +" : " + j1.getEtat());
@@ -79,6 +83,10 @@ public class Main {
 		} else {
 			joue.etatJouer(j2);
 			enAttente.etatJouer(j1);
+						
+			//clearscreen
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			
 			jeu1.affichageBoard(j2, j1);
 			
 			//test

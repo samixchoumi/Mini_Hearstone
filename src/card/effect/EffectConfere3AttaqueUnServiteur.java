@@ -10,7 +10,7 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
     public EffectConfere3AttaqueUnServiteur(FactoryCard fc) {
         this.fc = fc;
         this.name = "Benediction de puissance";
-        this.effect = "Conf�re +3 d�attaque � un serviteur";
+        this.effect = "Confere +3 d attaque a un serviteur";
     }
 
     @Override
@@ -33,7 +33,7 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
     }
 
     public String toString() {
-        return fc.toString() + "Cette carte possede un effet de "+this.getName();
+        return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
     }
 
     @Override

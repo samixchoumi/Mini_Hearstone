@@ -14,7 +14,7 @@ public class EffectMaitriseDuBlocage extends EffectDecorator{
     public EffectMaitriseDuBlocage(FactoryCard fc) {
         this.fc = fc;
         this.name = "Maitrise du blocage";
-        this.effect = "+5 d�armure et place une carte al�atoire de la pioche dans votre main";
+        this.effect = "+5 d armure et place une carte aleatoire de la pioche dans votre main";
     }
 
     @Override

@@ -69,6 +69,6 @@ public class CardYetiNoroit extends FactoryCard {
 	public void setMana(int mana) {this.mana = mana;}
 	
 	public String toString(){
-		return "Y�ti noroit | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
+		return "Yeti noroit | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |" ;
 	}
 }

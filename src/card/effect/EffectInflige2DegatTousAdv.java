@@ -10,7 +10,7 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	public EffectInflige2DegatTousAdv(FactoryCard fc) {
 		this.fc = fc;
 		this.name = "Consecration";
-		this.effect = "Inflige 2 points de d�g�ts � tous les adversaires";
+		this.effect = "Inflige 2 points de degats a tous les adversaires";
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	}
 	
 	public String toString() {
-		return fc.toString() + "Cette carte possede un effet de "+this.getName();
+		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 
 	@Override

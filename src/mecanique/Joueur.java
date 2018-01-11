@@ -218,7 +218,6 @@ public class Joueur {
 			addCardMain();
 			addCardMain();
 			addCardMain();
-			addCardMain();
 			System.out.println("Carte en main de "+getName());
 			System.out.println("Mana : " + getMana());
 			System.out.println("Vie : " + getHeros().getLife());
@@ -233,6 +232,7 @@ public class Joueur {
 	
 	public void addCardJeu(){
 		int NumeroDeLaCarteDansLaMain = 1;
+		//TODO
 		FactoryCard carteAJouer = listeCarteDuJoueurMain.get(NumeroDeLaCarteDansLaMain);
 		listeCarteEnJeux.add(carteAJouer);
 	}

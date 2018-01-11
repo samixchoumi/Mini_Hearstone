@@ -37,6 +37,11 @@ public class Jeux {
 		if (j1.getEtat().toString().equals("En jeu") && j2.getEtat().toString().equals("En Attente")){
 			joue.etatJouer(j2);
 			enAttente.etatJouer(j1);
+			
+			//clearscreen
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			j2.addCardMain();
+			
 			affichageBoard(j2, j1);
 			
 			System.out.println(j1.getName() +" : " + j1.getEtat());
@@ -46,6 +51,11 @@ public class Jeux {
 		}else if (j1.getEtat().toString().equals("En Attente") && j2.getEtat().toString().equals("En jeu")) {
 			joue.etatJouer(j1);
 			enAttente.etatJouer(j2);
+			
+			//clearscreen
+			System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+			j1.addCardMain();
+			
 			affichageBoard(j1, j2);
 			
 			System.out.println(j1.getName() +" : " + j1.getEtat());
@@ -78,7 +88,6 @@ public class Jeux {
 	}
 	
 	public void affichageBoard(Joueur j, Joueur jAdv){
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 		System.out.println("________________________________________________");
 		System.out.println("Carte en jeu de " +jAdv.getName()+ ":");
 		jAdv.afficherCardJeu();
@@ -90,5 +99,6 @@ public class Jeux {
 		j.afficherCardMain();
 		System.out.println("________________________________________________");
 		j.afficherInfoJoueur();
+		System.out.println("________________________________________________");
 	}
 }
