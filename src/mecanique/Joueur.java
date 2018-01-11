@@ -241,6 +241,17 @@ public class Joueur {
 		for(FactoryCard c : listeCarteDuJoueurMain){
 			System.out.println("|" +listeCarteDuJoueurMain.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
 		}
-			
+	}
+	
+	public void afficherCardJeu(){
+		for(FactoryCard c : listeCarteEnJeux){
+			System.out.println("|" +listeCarteEnJeux.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
+		}
+	}
+	
+	public void afficherInfoJoueur(){
+		System.out.println("Vie restante : " + heros.getLife());
+		System.out.println("Mana         : " + getMana());
+		System.out.println("A vous "+getName()+" !");
 	}
 }

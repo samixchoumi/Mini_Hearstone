@@ -58,24 +58,39 @@ public class Main {
 		j2.setJoueurAdv(j1);
 		j2.setHeros(joueur2Heros);
 		
-		/*
-		Joueur j1 = new Joueur("Samix", "Mage");
-		Joueur j2 = new Joueur("Cedric", "Mage");
-		*/
-		jeu1.initialisationPartie(j1, j2);
+		int initialisation = jeu1.initialisationPartie(j1, j2);
 		
 		EtatJouer joue = new EtatJouer();
 		EtatAttente enAttente = new EtatAttente();
 		
-		joue.etatJouer(j1);
-		enAttente.etatJouer(j2);
-		System.out.println("------------------Etat de depart------------------");
-		System.out.println("joueur1 : " + j1.getEtat());
-		System.out.println("joueur2 : " + j2.getEtat());
+
+		
+		
+		if(initialisation == 1){
+			joue.etatJouer(j1);
+			enAttente.etatJouer(j2);
+			jeu1.affichageBoard(j1, j2);
+			
+			//test
+			System.out.println("------------------Etat de depart------------------");
+			System.out.println(j1.getName() +" : " + j1.getEtat());
+			System.out.println(j2.getName() +" : " + j2.getEtat());
+			jeu1.pointDeMana(j1);
+		} else {
+			joue.etatJouer(j2);
+			enAttente.etatJouer(j1);
+			jeu1.affichageBoard(j2, j1);
+			
+			//test
+			System.out.println("------------------Etat de depart------------------");
+			System.out.println(j1.getName() +" : " + j1.getEtat());
+			System.out.println(j2.getName() +" : " + j2.getEtat());
+			jeu1.pointDeMana(j2);
+		}
 		
 		while(j1.getHeros().getLife() != 0 || j1.getHeros().getLife() != 0){
 			String finTour = sc.nextLine();
-			if(finTour.equals("finTour"))
+			if(finTour.equalsIgnoreCase("finTour"))
 				jeu1.changementDeTour(j1, j2);
 			else
 				break;
