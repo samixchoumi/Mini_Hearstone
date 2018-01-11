@@ -38,7 +38,7 @@ public class EffectVolDeVie extends EffectDecorator {
 	}
 	
 	public String toString() {
-		return fc.toString() + " Cette carte possede un effet de "+this.getEffect() + " |";
+		return fc.toString() + " Cette carte possede un "+this.getEffect() + " |";
 	}
 	
 	@Override
