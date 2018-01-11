@@ -33,7 +33,7 @@ public class EffectPlus1AttaqueToutServiteurAllie extends EffectDecorator {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
+		return fc.toString() + " Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 
 	@Override

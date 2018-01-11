@@ -38,7 +38,7 @@ public class EffectProvocation extends EffectDecorator {
 	}
 	
 	public String toString() {
-		return fc.toString() + "Cette carte possede un effet de "+this.getEffect() + " |";
+		return fc.toString() + " Cette carte possede un effet de "+this.getEffect() + " |";
 	}
 	
 	@Override

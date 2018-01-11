@@ -36,7 +36,7 @@ public class EffectMaitriseDuBlocage extends EffectDecorator{
     }
 
     public String toString() {
-        return fc.toString() + "Cette carte possede un effet de "+this.getName();
+        return fc.toString() + " Cette carte possede un effet de "+this.getName();
     }
 
     @Override
