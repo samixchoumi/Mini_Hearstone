@@ -42,7 +42,7 @@ public class Joueur {
 	private Etat etat;
 	private ArrayList<FactoryCard> listeCarteDuJoueurMain;
 	private ArrayList<FactoryCard> listeCarteEnJeux;
-	private int valChoisi; //index de la carte ciblé pour un pouvoir/effet
+	private int valChoisi; //index de la carte ciblï¿½ pour un pouvoir/effet
 
 	public Joueur(String name, String heros, Joueur joueurAdv) {
 		this.joueurAdv = joueurAdv;
@@ -84,13 +84,13 @@ public class Joueur {
 
 	public void setHeros(String heros) {
 		if(heros.equalsIgnoreCase("Mage")){
-			this.heros = new HerosMage(joueurAdv);
+			this.heros = new HerosMage(joueurAdv, this);
 			this.heros = new PowerMage(this.heros);
 		} else if(heros.equalsIgnoreCase("Guerrier")){
-			this.heros = new HerosGuerrier(joueurAdv);
+			this.heros = new HerosGuerrier(joueurAdv, this);
 			this.heros = new PowerGuerrier(this.heros);
 		} else if(heros.equalsIgnoreCase("Paladin")){
-			this.heros = new HerosPaladin(joueurAdv);
+			this.heros = new HerosPaladin(joueurAdv, this);
 			this.heros = new PowerPaladin(this.heros);
 		}
 		System.out.println("Heros choisi +>" + getHeros());

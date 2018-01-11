@@ -26,7 +26,7 @@ public class EffectInvoqueDeuxServiteurs extends EffectDecorator{
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Image miroir ";
+        return fc.getEffect()+" Image miroir | " +this.effect;
     }
 
     @Override

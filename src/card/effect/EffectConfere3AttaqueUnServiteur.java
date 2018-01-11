@@ -10,7 +10,7 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
     public EffectConfere3AttaqueUnServiteur(FactoryCard fc) {
         this.fc = fc;
         this.name = "Benediction de puissance";
-        this.effect = "Confère +3 d’attaque à un serviteur";
+        this.effect = "Confï¿½re +3 dï¿½attaque ï¿½ un serviteur";
     }
 
     @Override
@@ -22,7 +22,7 @@ public class EffectConfere3AttaqueUnServiteur extends EffectDecorator {
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Benediction de puissance";
+        return fc.getEffect()+" Benediction de puissance | " +this.effect;
     }
 
     @Override

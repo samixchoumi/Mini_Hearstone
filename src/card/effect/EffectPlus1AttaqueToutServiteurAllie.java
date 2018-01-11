@@ -19,7 +19,7 @@ public class EffectPlus1AttaqueToutServiteurAllie extends EffectDecorator {
 	}
 
 	@Override
-	public String getEffect() {return fc.getEffect()+" +1 d'attaque de tous les serviteurs ";}
+	public String getEffect() {return fc.getEffect()+" | " +this.effect;}
 
 	@Override
 	public void useEffect() {

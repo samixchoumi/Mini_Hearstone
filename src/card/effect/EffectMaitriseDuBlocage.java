@@ -14,7 +14,7 @@ public class EffectMaitriseDuBlocage extends EffectDecorator{
     public EffectMaitriseDuBlocage(FactoryCard fc) {
         this.fc = fc;
         this.name = "Maitrise du blocage";
-        this.effect = "+5 d’armure et place une carte aléatoire de la pioche dans votre main";
+        this.effect = "+5 dï¿½armure et place une carte alï¿½atoire de la pioche dans votre main";
     }
 
     @Override
@@ -26,7 +26,7 @@ public class EffectMaitriseDuBlocage extends EffectDecorator{
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+ " Maitrise du blocage ";
+        return fc.getEffect()+ " Maitrise du blocage | " +this.effect;
     }
 
     @Override

@@ -22,7 +22,7 @@ public class EffectCharge extends EffectDecorator {
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return fc.getEffect()+" Charge ";
+		return fc.getEffect()+" Charge | " +this.effect;
 	}
 
 	@Override

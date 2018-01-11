@@ -19,22 +19,23 @@ public class PowerGuerrier extends Power {
 	public String getPower() {return heros.getPower() + this.getName();}
 
 	public void usePower() {
-		// TODO Auto-generated method stub
-		System.out.println("Utilise sa capacite special : " + this.name + " !"+
-				"\n" + this.effect);
+		setLife(getLife()+2);
 	}
 	
-	public String toString(){return heros.toString();}
+	public String toString(){return heros.toString() + effect;}
 
 	@Override
 	public int getLife() {return heros.getLife();}
 
 	@Override
-	public void setLife(int life) {}
+	public void setLife(int life) {this.heros.setLife(life);}
 
 	@Override
 	public String typeHero() {return heros.typeHero();}
 	
 	@Override
 	public Joueur getJoueurAdversaire() {return heros.getJoueurAdversaire();}
+
+	@Override
+	public Joueur getJoueur() {return heros.getJoueur();}
 }

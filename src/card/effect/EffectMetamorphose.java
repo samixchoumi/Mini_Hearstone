@@ -11,7 +11,7 @@ public class EffectMetamorphose extends EffectDecorator{
 	public EffectMetamorphose(FactoryCard fc) {
 		this.fc = fc;
 		this.name = "Metamorphose";
-		this.effect = "Transforme un serviteur en serviteur 1/1 sans effet spécial";
+		this.effect = "Transforme un serviteur en serviteur 1/1 sans effet spï¿½cial";
 	}
 
 	@Override
@@ -23,7 +23,7 @@ public class EffectMetamorphose extends EffectDecorator{
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return fc.getEffect()+" Metamorphose ";
+		return fc.getEffect()+" Metamorphose | " +this.effect;
 	}
 
 	@Override

@@ -22,7 +22,7 @@ public class EffectVolDeVie extends EffectDecorator {
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return fc.getEffect()+" Vol de vie ";
+		return fc.getEffect()+" Vol de vie | " +this.effect;
 	}
 
 	@Override

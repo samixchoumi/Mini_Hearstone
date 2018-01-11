@@ -22,7 +22,7 @@ public class EffectProvocation extends EffectDecorator {
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return fc.getEffect()+" Provocation ";
+		return fc.getEffect()+" Provocation | " +this.effect;
 	}
 
 	@Override

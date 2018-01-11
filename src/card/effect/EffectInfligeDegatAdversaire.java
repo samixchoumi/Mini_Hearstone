@@ -13,7 +13,7 @@ public class EffectInfligeDegatAdversaire extends EffectDecorator {
     public EffectInfligeDegatAdversaire(FactoryCard fc) {
         this.fc = fc;
         this.name = "ExplosionDesArcanes";
-        this.effect = "Inflige 1 point de degats a  tous les serviteurs adverses";
+        this.effect = "Inflige 1 point de degats aï¿½ tous les serviteurs adverses";
     }
 
     @Override
@@ -25,7 +25,7 @@ public class EffectInfligeDegatAdversaire extends EffectDecorator {
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Explosion Des Arcanes ";
+        return fc.getEffect()+" Explosion Des Arcanes | " +this.effect;
     }
 
     @Override

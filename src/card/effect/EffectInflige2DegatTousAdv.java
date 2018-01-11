@@ -10,7 +10,7 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	public EffectInflige2DegatTousAdv(FactoryCard fc) {
 		this.fc = fc;
 		this.name = "Consecration";
-		this.effect = "Inflige 2 points de dégâts à tous les adversaires";
+		this.effect = "Inflige 2 points de dï¿½gï¿½ts ï¿½ tous les adversaires";
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class EffectInflige2DegatTousAdv extends EffectDecorator {
 	@Override
 	public String getEffect() {
 		// TODO Auto-generated method stub
-		return fc.getEffect()+" Consecration ";
+		return fc.getEffect()+" Consecration | " +this.effect;
 	}
 
 	@Override

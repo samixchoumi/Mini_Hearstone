@@ -22,7 +22,7 @@ public class Effect1DegatTOUSServiteur extends EffectDecorator {
     @Override
     public String getEffect() {
         // TODO Auto-generated method stub
-        return fc.getEffect()+" Tourbillon";
+        return fc.getEffect()+" Tourbillon | " +this.effect;
     }
 
     @Override

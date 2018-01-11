@@ -7,9 +7,11 @@ public class HerosMage extends Heros {
 
 	private int life;
 	private Joueur joueurAdv;
+	private Joueur joueur;
 	
-	public HerosMage(Joueur joueurAdv){
-		this.joueurAdv = joueurAdv;
+	public HerosMage(Joueur jAdv, Joueur j){
+		this.joueur = j;
+		this.joueurAdv = jAdv;
 		this.life = 30;
 	}
 	
@@ -31,9 +33,8 @@ public class HerosMage extends Heros {
 	public String toString(){return typeHero();}
 
 	@Override
-	public Joueur getJoueurAdversaire() {
-		// TODO Auto-generated method stub
-		return joueurAdv;
-	}
-	
+	public Joueur getJoueurAdversaire() {return joueurAdv;}
+
+	@Override
+	public Joueur getJoueur() {return joueur;}
 }
