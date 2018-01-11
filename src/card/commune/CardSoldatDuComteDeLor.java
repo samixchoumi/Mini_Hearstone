@@ -69,6 +69,6 @@ public class CardSoldatDuComteDeLor extends FactoryCard {
 	public void setMana(int mana) {this.mana = mana;}
 	
 	public String toString(){
-		return "Soldat du comt�-de-l�or | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
+		return "Soldat du comte-de-l or | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
 	}
 }
