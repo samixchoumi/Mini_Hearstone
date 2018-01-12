@@ -6,6 +6,7 @@ import card.FactoryCard;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
+import power.Power;
 
 public class Main {
 
@@ -146,7 +147,7 @@ public class Main {
 			};
 			
 			if(choix.equalsIgnoreCase("joueHeroPower")){
-				jeu1.joueHeroPower(joueurEnJeu.getHeros());
+				jeu1.joueHeroPower((Power) joueurEnJeu.getHeros());
 			}			
 			
 			if(choix.equalsIgnoreCase("attaqueHero")){

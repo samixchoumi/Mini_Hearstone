@@ -19,6 +19,7 @@ import hero.Heros;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
+import power.Power;
 
 public class Jeux {
 	public ArrayList<FactoryCard> Board = new ArrayList<FactoryCard>();
@@ -198,8 +199,9 @@ public class Jeux {
 		}
 	}
 	
-	public void joueHeroPower(Heros h){
+	public void joueHeroPower(Power h){
 		System.out.println(h.getPower());
+		h.usePower();
 	}
 	
 	public void attaqueHero(Heros h){
