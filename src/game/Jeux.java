@@ -3,6 +3,18 @@ package game;
 import java.util.ArrayList;
 
 import card.FactoryCard;
+import card.effect.Effect1DegatTOUSServiteur;
+import card.effect.EffectCharge;
+import card.effect.EffectConfere3AttaqueUnServiteur;
+import card.effect.EffectDecorator;
+import card.effect.EffectInflige2DegatTousAdv;
+import card.effect.EffectInfligeDegatAdversaire;
+import card.effect.EffectInvoqueDeuxServiteurs;
+import card.effect.EffectMaitriseDuBlocage;
+import card.effect.EffectMetamorphose;
+import card.effect.EffectPlus1AttaqueToutServiteurAllie;
+import card.effect.EffectProvocation;
+import card.effect.EffectVolDeVie;
 import hero.Heros;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
@@ -114,6 +126,69 @@ public class Jeux {
 	
 	public void joueCarte(FactoryCard card){
 		observationEffectCarte(card);
+		EffectDecorator effect;
+		if (card.getEffect().contains("Image miroir")){
+			effect = new EffectInvoqueDeuxServiteurs(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Provocation")){
+			effect = new EffectProvocation(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Tourbillon")){
+			effect = new Effect1DegatTOUSServiteur(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Charge")){
+			effect = new EffectCharge(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Benediction de puissance")){
+			effect = new EffectConfere3AttaqueUnServiteur(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Consecration")){
+			effect = new EffectInflige2DegatTousAdv(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("ExplosionDesArcanes")){
+			effect = new EffectInfligeDegatAdversaire(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Maitrise du blocage")){
+			effect = new EffectMaitriseDuBlocage(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Metamorphose")){
+			effect = new EffectMetamorphose(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Metamorphose")){
+			effect = new EffectMetamorphose(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Plus 1 d attaque")){
+			effect = new EffectPlus1AttaqueToutServiteurAllie(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		if (card.getEffect().contains("Vol de vie")){
+			effect = new EffectVolDeVie(card);
+			effect.useEffect();
+			System.out.println("useEffect");
+		}
+		
+		
 	}
 	
 	public void afficherBoard(){

@@ -35,16 +35,6 @@ public class Main {
 			joueur2Pseudo = sc.nextLine();
 		}
 		
-		while ( joueur1Pseudo.isEmpty() || joueur2Pseudo.isEmpty()){
-			System.out.println("joueur 1 et joueur 2 vide !");
-
-			System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
-			joueur1Pseudo = sc.nextLine();
-			
-			System.out.println("Joueur 2 : Veuillez choisir un pseudo : ");
-			joueur2Pseudo = sc.nextLine();
-		}
-		
 		System.out.println("Joueur 1 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
 		String joueur1Heros = sc.nextLine();
 		while(!((joueur1Heros.equalsIgnoreCase("mage")) || (joueur1Heros.equalsIgnoreCase("paladin")) || (joueur1Heros.equalsIgnoreCase("guerrier")))){
