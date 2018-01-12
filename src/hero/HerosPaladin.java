@@ -29,7 +29,7 @@ public class HerosPaladin extends Heros {
 	@Override
 	public String getPower() {
 		// TODO Auto-generated method stub
-		return "Power :";
+		return "Power : ";
 	}
 	
 	public String toString(){return typeHero();}

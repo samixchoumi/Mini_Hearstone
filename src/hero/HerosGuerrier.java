@@ -29,7 +29,7 @@ public class HerosGuerrier extends Heros {
 	@Override
 	public String getPower() {
 		// TODO Auto-generated method stub
-		return "Pouvoir :";
+		return "Pouvoir : ";
 	}
 	
 	public String toString(){return typeHero();}

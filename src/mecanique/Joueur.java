@@ -67,6 +67,16 @@ public class Joueur {
 	public ArrayList<FactoryCard> getListeCarteDuJoueurMain() {return listeCarteDuJoueurMain;}
 
 	public void setListeCarteDuJoueurMain(ArrayList<FactoryCard> listeCarteDuJoueurMain) {this.listeCarteDuJoueurMain = listeCarteDuJoueurMain;}
+	
+	public void deleteCardMain(FactoryCard card){
+		for (FactoryCard c : listeCarteDuJoueurMain){
+			System.out.println(c + "  \n  " + card + c == card +"\n");
+			if (c == card){
+				
+				listeCarteDuJoueurMain.remove(c);
+			}
+		}
+	}
 
 	public ArrayList<FactoryCard> getListeCarteEnJeux() {return listeCarteEnJeux;}
 

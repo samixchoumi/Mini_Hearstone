@@ -1,9 +1,12 @@
 package card.commune;
 
 import card.FactoryCard;
+import card.Observable;
+import card.effect.EffectDecorator;
+import card.effect.EffectPlus1AttaqueToutServiteurAllie;
 import mecanique.Joueur;
 
-public class CardChefDeRaid extends FactoryCard {
+public class CardChefDeRaid extends FactoryCard implements Observable {
 
 	private int attaque;
 	private int life;
@@ -71,4 +74,11 @@ public class CardChefDeRaid extends FactoryCard {
 	public String toString(){
 		return "Chef de raid | "+getAttaque()+" atk | "+getLife()+" hp | " +getMana()+" mana |";
 	}
+
+	@Override
+	public void useEffect(EffectDecorator effect) {
+		// TODO Auto-generated method stub
+		effect.useEffect();
+	}
+
 }

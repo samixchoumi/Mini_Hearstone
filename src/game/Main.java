@@ -2,6 +2,7 @@ package game;
 
 import java.util.Scanner;
 
+import card.FactoryCard;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
@@ -19,8 +20,30 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
 		String joueur1Pseudo = sc.nextLine();
+		while ( joueur1Pseudo.isEmpty()){
+			System.out.println("Joueur 1 vide !");
+
+			System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
+			joueur1Pseudo = sc.nextLine();
+		}
 		System.out.println("Joueur 2 : Veuillez choisir un pseudo : ");
 		String joueur2Pseudo = sc.nextLine();
+		while ( joueur2Pseudo.isEmpty()){
+			System.out.println("Joueur 2 vide !");
+
+			System.out.println("Joueur 2 : Veuillez choisir un pseudo : ");
+			joueur2Pseudo = sc.nextLine();
+		}
+		
+		while ( joueur1Pseudo.isEmpty() || joueur2Pseudo.isEmpty()){
+			System.out.println("joueur 1 et joueur 2 vide !");
+
+			System.out.println("Joueur 1 : Veuillez choisir un pseudo : ");
+			joueur1Pseudo = sc.nextLine();
+			
+			System.out.println("Joueur 2 : Veuillez choisir un pseudo : ");
+			joueur2Pseudo = sc.nextLine();
+		}
 		
 		System.out.println("Joueur 1 : Veuillez choisir un heros (Mage|Guerrier|Paladin) : ");
 		String joueur1Heros = sc.nextLine();
@@ -88,20 +111,70 @@ public class Main {
 			jeu1.pointDeMana(j2);
 		}
 		
-		while(j1.getHeros().getLife() != 0 || j1.getHeros().getLife() != 0){
+		while(j1.getHeros().getLife() != 0 || j2.getHeros().getLife() != 0){
+			Joueur joueurEnJeu = j1;
+			Joueur joueurAdv = j2;
+
+			int manaTour = joueurEnJeu.getMana();
+			
+			if (j1.getEtat().toString().equals("En jeu")){
+				joueurEnJeu = j1;
+				joueurAdv = j2;
+			} else {
+				joueurEnJeu = j2;
+				joueurAdv = j1;
+			}
+			System.out.println("Que voulez vous faire ? (attaqueCarte | attaqueHero | joueCarte | joueHeroPower | voirMain | finTour)");
 			String choix = sc.nextLine();
+			if(choix.equalsIgnoreCase("joueCarte")){
+				System.out.println("Jouer quelle carte ? (numero)");
+				String idCarte = sc.nextLine();
+				System.out.println("Mana courant : " + manaTour);
+				for (FactoryCard card : joueurEnJeu.getListeCarteDuJoueurMain()){
+					if(!idCarte.equals("")){
+						
+					
+					if ( Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteDuJoueurMain().indexOf(card)){
+						
+						if (jeu1.coutManaCarteDiffPointDeManCourant(joueurEnJeu, card) == true){
+							
+							jeu1.Board.add(card);
+							jeu1.joueCarte(card);	
+//							joueurEnJeu.deleteCardMain(card);
+//							
+							manaTour = manaTour - card.getMana();
+							
+						} else {
+							System.out.println("pas assez de mana ! ");
+						}
+	
+					}
+					}
+				}
+					
+				jeu1.afficherBoard();
+			};
+			
+			if(choix.equalsIgnoreCase("joueHeroPower")){
+				jeu1.joueHeroPower(joueurEnJeu.getHeros());
+			}			
+			
+			if(choix.equalsIgnoreCase("attaqueHero")){
+				jeu1.attaqueHero(joueurAdv.getHeros());
+			}
+			
+			if(choix.equalsIgnoreCase("voirMain")){
+				joueurEnJeu.afficherCardMain();
+			}
+			
 			//if(choix.equalsIgnoreCase("attaqueCarte"))
-			
-			//if(choix.equalsIgnoreCase("attaqueHero"))
-			
-			//if(choix.equalsIgnoreCase("joueCarte"))
-			
-			//if(choix.equalsIgnoreCase("joueHeroPower"))
 			
 			if(choix.equalsIgnoreCase("finTour"))
 				jeu1.changementDeTour(j1, j2);
-			else
-				break;
+			
+			else if(!choix.equalsIgnoreCase("voirMain") && !choix.equalsIgnoreCase("attaqueCarte") && !choix.equalsIgnoreCase("attaqueHero") && !choix.equalsIgnoreCase("joueCarte") && !choix.equalsIgnoreCase("joueHeroPower") && !choix.equalsIgnoreCase("finTour")){
+				System.out.println("erreur de saisie !");
+			}
 		}
 		
 		//TODO Scanner

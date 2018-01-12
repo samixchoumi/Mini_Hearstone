@@ -1,10 +1,15 @@
 package game;
 
+import java.util.ArrayList;
+
+import card.FactoryCard;
+import hero.Heros;
 import mecanique.EtatAttente;
 import mecanique.EtatJouer;
 import mecanique.Joueur;
 
 public class Jeux {
+	public ArrayList<FactoryCard> Board = new ArrayList<FactoryCard>();
 	
 	public int initialisationPartie(Joueur j1, Joueur j2){
 		int lower = 1 , higher = 3;
@@ -65,13 +70,18 @@ public class Jeux {
 		}
 	}
 	
-	public void observationEffectCarte(){
+	public void observationEffectCarte(FactoryCard card){
 		//TODO DP Observer (et DP State)
-		//CEDRIC
+		System.out.println(card.getEffect());
 	}
 	
-	public void coutManaCarteDiffPointDeManCourant(){
+	public boolean coutManaCarteDiffPointDeManCourant(Joueur j, FactoryCard card){
 		//TODO Verifier qu'il y a assez de mana pour jouer les cartes
+		if (j.getMana() >= card.getMana()){
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public void pointDeMana(Joueur j){
@@ -100,5 +110,23 @@ public class Jeux {
 		System.out.println("________________________________________________");
 		j.afficherInfoJoueur();
 		System.out.println("________________________________________________");
+	}
+	
+	public void joueCarte(FactoryCard card){
+		observationEffectCarte(card);
+	}
+	
+	public void afficherBoard(){
+		for(FactoryCard c : Board){
+			System.out.println("|" + Board.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
+		}
+	}
+	
+	public void joueHeroPower(Heros h){
+		System.out.println(h.getPower());
+	}
+	
+	public void attaqueHero(Heros h){
+		System.out.println(h.getJoueurAdversaire().getName());
 	}
 }
