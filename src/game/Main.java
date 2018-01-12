@@ -167,6 +167,17 @@ public class Main {
 				System.out.println("erreur de saisie !");
 			}
 		}
+		
+		if(j1.getHeros().getLife() == 0)
+			j1.setEnVie(false);
+		if(j2.getHeros().getLife() == 0)
+			j2.setEnVie(false);
+		
+		if(j1.isEnVie() == true)
+			System.out.println(j1.getName()+" a gagne ! Felicitation !");
+		else
+			System.out.println(j2.getName()+" a gagne ! Felicitation !");
+		
 	}
 
 }
