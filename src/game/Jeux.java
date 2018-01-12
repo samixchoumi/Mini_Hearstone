@@ -192,6 +192,7 @@ public class Jeux {
 	}
 	
 	public void afficherBoard(){
+		System.out.println("----------Affichage du board----------");
 		for(FactoryCard c : Board){
 			System.out.println("|" + Board.indexOf(c) + "|" + c.toString() /*Faire les toString des cartes (en gros ajouter leur nom)*/);
 		}

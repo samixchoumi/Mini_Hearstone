@@ -166,8 +166,6 @@ public class Main {
 				System.out.println("erreur de saisie !");
 			}
 		}
-		
-		//TODO Scanner
 	}
 
 }
