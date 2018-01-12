@@ -123,26 +123,17 @@ public class Main {
 				System.out.println("Mana courant : " + manaTour);
 				for (FactoryCard card : joueurEnJeu.getListeCarteDuJoueurMain()){
 					if(!idCarte.equals("")){
-						
-					
-					if ( Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteDuJoueurMain().indexOf(card)){
-						
-						if (jeu1.coutManaCarteDiffPointDeManCourant(joueurEnJeu, card) == true){
-							
-							jeu1.Board.add(card);
-							jeu1.joueCarte(card);	
-//							joueurEnJeu.deleteCardMain(card);
-//							
-							manaTour = manaTour - card.getMana();
-							
-						} else {
-							System.out.println("pas assez de mana ! ");
+						if ( Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteDuJoueurMain().indexOf(card)){
+							if (jeu1.coutManaCarteDiffPointDeManCourant(joueurEnJeu, card) == true){
+								jeu1.Board.add(card);
+								jeu1.joueCarte(card);					
+								manaTour = manaTour - card.getMana();
+							} else {
+								System.out.println("pas assez de mana ! ");
+							}
 						}
-	
-					}
 					}
 				}
-					
 				jeu1.afficherBoard();
 			};
 			
@@ -151,7 +142,7 @@ public class Main {
 			}			
 			
 			if(choix.equalsIgnoreCase("attaqueHero")){
-				jeu1.attaqueHero(joueurAdv.getHeros());
+				jeu1.attaqueHero(joueurEnJeu);
 			}
 			
 			if(choix.equalsIgnoreCase("voirMain")){

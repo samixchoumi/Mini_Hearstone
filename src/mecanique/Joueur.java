@@ -37,7 +37,6 @@ import power.PowerPaladin;
  * Vie / Mana / Nom / Heros / Etat(en jeu ou non) / carte en main
  * carte en jeu / cible choisi a attaquer
  * @author Samix-PC
- *
  */
 public class Joueur {
 	private Joueur joueurAdv;

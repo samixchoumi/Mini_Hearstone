@@ -21,9 +21,19 @@ import mecanique.EtatJouer;
 import mecanique.Joueur;
 import power.Power;
 
+/**
+ * Classe mettant en place les actions du jeu
+ * @author Samix-PC
+ */
 public class Jeux {
 	public ArrayList<FactoryCard> Board = new ArrayList<FactoryCard>();
 	
+	/**
+	 * Initialise la partie de jeu 
+	 * @param j1 etant le joueur 1
+	 * @param j2 etant le joueur 2
+	 * @return le resultat du random a prendre en compte lors de l'initialisation de la main
+	 */
 	public int initialisationPartie(Joueur j1, Joueur j2){
 		int lower = 1 , higher = 3;
 		int random = (int)(Math.random()*(higher-lower)) + lower;
@@ -37,16 +47,15 @@ public class Jeux {
 			System.out.println("---------");
 			j2.initialiseMain(1);
 		}
-		System.out.println("--------- verif des mains ci dessous");
-		//verif des mains ci dessous
-		j1.afficherCardMain();
-		System.out.println("---------");
-		j2.afficherCardMain();
 		return random;
 	}
 	
+	/**
+	 * Methode permettant de changer de tour et de mettre ainsi l'etat du joueur a jour
+	 * @param j1 etant le joueur 1
+	 * @param j2 etant le joueur 2
+	 */
 	public void changementDeTour(Joueur j1, Joueur j2){
-		//TODO DP State
 		EtatJouer joue = new EtatJouer();
 		EtatAttente enAttente = new EtatAttente();
 		
@@ -83,13 +92,21 @@ public class Jeux {
 		}
 	}
 	
+	/**
+	 * Observe l'effet d'une carte
+	 * @param card etant la carte a observer
+	 */
 	public void observationEffectCarte(FactoryCard card){
-		//TODO DP Observer (et DP State)
 		System.out.println(card.getEffect());
 	}
 	
+	/**
+	 * Methode qui verifie si le cout en mana d'une carte a jouer est bien possible avec le mana du joueur
+	 * @param j le joueur dont on doit verifier les infos
+	 * @param card la carte jouer par le joueur
+	 * @return un boolean indiquant si il est possible de jouer la carte ou non
+	 */
 	public boolean coutManaCarteDiffPointDeManCourant(Joueur j, FactoryCard card){
-		//TODO Verifier qu'il y a assez de mana pour jouer les cartes
 		if (j.getMana() >= card.getMana()){
 			return true;
 		} else {
@@ -97,8 +114,11 @@ public class Jeux {
 		}
 	}
 	
+	/**
+	 * met a jour les points de mana du joueur a chaque tour en limitant a 10
+	 * @param j etant le joueur
+	 */
 	public void pointDeMana(Joueur j){
-		//TODO +1 par tour (max 10)
 		int manaJoueur = j.getMana();
 		if(manaJoueur == 10){
 			j.setMana(10);
@@ -110,6 +130,11 @@ public class Jeux {
 		}
 	}
 	
+	/**
+	 * Affiche le board du joueur
+	 * @param j le joueur jouant
+	 * @param jAdv le joueur adverse pour afficher ses cartes en jeu
+	 */
 	public void affichageBoard(Joueur j, Joueur jAdv){
 		System.out.println("________________________________________________");
 		System.out.println("Carte en jeu de " +jAdv.getName()+ ":");
@@ -125,73 +150,66 @@ public class Jeux {
 		System.out.println("________________________________________________");
 	}
 	
+	/**
+	 * Methode qui joue la carte et utilise son effet
+	 * @param card etant la carte joue
+	 */
 	public void joueCarte(FactoryCard card){
 		observationEffectCarte(card);
 		EffectDecorator effect;
 		if (card.getEffect().contains("Image miroir")){
 			effect = new EffectInvoqueDeuxServiteurs(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Provocation")){
 			effect = new EffectProvocation(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Tourbillon")){
 			effect = new Effect1DegatTOUSServiteur(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Charge")){
 			effect = new EffectCharge(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Benediction de puissance")){
 			effect = new EffectConfere3AttaqueUnServiteur(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Consecration")){
 			effect = new EffectInflige2DegatTousAdv(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("ExplosionDesArcanes")){
 			effect = new EffectInfligeDegatAdversaire(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Maitrise du blocage")){
 			effect = new EffectMaitriseDuBlocage(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Metamorphose")){
 			effect = new EffectMetamorphose(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Metamorphose")){
 			effect = new EffectMetamorphose(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Plus 1 d attaque")){
 			effect = new EffectPlus1AttaqueToutServiteurAllie(card);
 			effect.useEffect();
-			System.out.println("useEffect");
 		}
 		if (card.getEffect().contains("Vol de vie")){
 			effect = new EffectVolDeVie(card);
 			effect.useEffect();
-			System.out.println("useEffect");
-		}
-		
-		
+		}		
 	}
 	
+	/**
+	 * Affichage du board
+	 */
 	public void afficherBoard(){
 		System.out.println("----------Affichage du board----------");
 		for(FactoryCard c : Board){
@@ -199,12 +217,20 @@ public class Jeux {
 		}
 	}
 	
+	/**
+	 * Methode qui utilise le pouvoir du heros
+	 * @param h etant le heros du joueur
+	 */
 	public void joueHeroPower(Power h){
 		System.out.println(h.getPower());
 		h.usePower();
 	}
 	
-	public void attaqueHero(Heros h){
-		System.out.println(h.getJoueurAdversaire().getName());
+	/**
+	 * Methode qui permet d attaquer un heros
+	 * @param j etant le joueur qui attaque
+	 */
+	public void attaqueHero(Joueur j){
+		System.out.println(j.getJoueurAdv().getName());
 	}
 }
