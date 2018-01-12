@@ -225,12 +225,4 @@ public class Jeux {
 		System.out.println(h.getPower());
 		h.usePower();
 	}
-	
-	/**
-	 * Methode qui permet d attaquer un heros
-	 * @param j etant le joueur qui attaque
-	 */
-	public void attaqueHero(Joueur j){
-		System.out.println(j.getJoueurAdv().getName());
-	}
 }

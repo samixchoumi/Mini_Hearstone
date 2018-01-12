@@ -118,12 +118,13 @@ public class Main {
 			System.out.println("Que voulez vous faire ? (attaqueCarte | attaqueHero | joueCarte | joueHeroPower | voirMain | finTour)");
 			String choix = sc.nextLine();
 			if(choix.equalsIgnoreCase("joueCarte")){
+				//regler le soucis du fais qu'on peut directement attaquer avec n'importe quel carte
 				System.out.println("Jouer quelle carte ? (numero)");
 				String idCarte = sc.nextLine();
 				System.out.println("Mana courant : " + manaTour);
 				for (FactoryCard card : joueurEnJeu.getListeCarteDuJoueurMain()){
 					if(!idCarte.equals("")){
-						if ( Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteDuJoueurMain().indexOf(card)){
+						if (Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteDuJoueurMain().indexOf(card)){
 							if (jeu1.coutManaCarteDiffPointDeManCourant(joueurEnJeu, card) == true){
 								jeu1.Board.add(card);
 								jeu1.joueCarte(card);					
@@ -142,14 +143,61 @@ public class Main {
 			}			
 			
 			if(choix.equalsIgnoreCase("attaqueHero")){
-				jeu1.attaqueHero(joueurEnJeu);
+				//regler le soucis pour que ça rentre dans la boucle
+				for (FactoryCard card : joueurAdv.getListeCarteEnJeux()){
+					System.err.println("test");
+					if(card.getEffect().contains("Provocation")){
+						System.out.println("Il est impossible d'attaquer le heros, il y a une carte avec un effet provocation"
+								+ "\n" + card.getEffect());
+					} else {
+						System.out.println("Attaquer avec quelle carte ? (numero)");
+						String idCarte = sc.nextLine();
+						for (FactoryCard card2 : joueurEnJeu.getListeCarteEnJeux()){
+							if(!idCarte.equals("")){
+								if (Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteEnJeux().indexOf(card2)){
+									joueurEnJeu.getJoueurAdv().getHeros().setLife(joueurEnJeu.getJoueurAdv().getHeros().getLife() - card2.getAttaque());
+								}
+							}
+						}
+					}
+				}
+				jeu1.affichageBoard(joueurEnJeu, joueurAdv);
 			}
 			
 			if(choix.equalsIgnoreCase("voirMain")){
 				joueurEnJeu.afficherCardMain();
 			}
 			
-			//if(choix.equalsIgnoreCase("attaqueCarte"))
+			if(choix.equalsIgnoreCase("attaqueCarte")){
+				FactoryCard fcAttaque = null;
+				System.out.println("Attaquer avec quelle carte ? (numero)");
+				String idCarte = sc.nextLine();
+				for (FactoryCard card3 : joueurEnJeu.getListeCarteEnJeux()){
+					if(!idCarte.equals("")){
+						if (Integer.parseInt(idCarte) == joueurEnJeu.getListeCarteEnJeux().indexOf(card3)){
+							fcAttaque = card3;
+						}
+					}
+				}
+				
+				//Regler le soucis de provocation
+				System.out.println("Attaquer quelle carte ? (numero)");
+				String idCarte2 = sc.nextLine();
+				for (FactoryCard card : joueurEnJeu.getJoueurAdv().getListeCarteEnJeux()){
+					if(card.getEffect().contains("Provocation")){
+						System.out.println("Il est impossible d'attaquer cette carte, il y a une carte avec un effet provocation"
+								+ "\n" + card.getEffect());
+					} else {
+						for (FactoryCard card2 : joueurEnJeu.getListeCarteEnJeux()){
+							if(!idCarte2.equals("")){
+								if (Integer.parseInt(idCarte2) == joueurEnJeu.getListeCarteEnJeux().indexOf(card2)){
+									card2.setLife(card2.getLife() - fcAttaque.getAttaque());
+								}
+							}
+						}
+					}
+				}
+			}
 			
 			if(choix.equalsIgnoreCase("finTour"))
 				jeu1.changementDeTour(j1, j2);

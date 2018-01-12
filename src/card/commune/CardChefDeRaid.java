@@ -3,7 +3,6 @@ package card.commune;
 import card.FactoryCard;
 import card.Observable;
 import card.effect.EffectDecorator;
-import card.effect.EffectPlus1AttaqueToutServiteurAllie;
 import mecanique.Joueur;
 
 public class CardChefDeRaid extends FactoryCard implements Observable {
