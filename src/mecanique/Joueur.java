@@ -33,7 +33,7 @@ import power.PowerGuerrier;
 import power.PowerMage;
 import power.PowerPaladin;
 /**
- * Classe contenant toutes les informations lié au joueur
+ * Classe contenant toutes les informations lie au joueur
  * Vie / Mana / Nom / Heros / Etat(en jeu ou non) / carte en main
  * carte en jeu / cible choisi a attaquer
  * @author Samix-PC
@@ -47,7 +47,7 @@ public class Joueur {
 	private Etat etat;
 	private ArrayList<FactoryCard> listeCarteDuJoueurMain;
 	private ArrayList<FactoryCard> listeCarteEnJeux;
-	private int valChoisi; //index de la carte ciblï¿½ pour un pouvoir/effet
+	private int valChoisi; //index de la carte cible pour un pouvoir/effet
 
 	/**
 	 * Constructeur du joueur
@@ -92,8 +92,8 @@ public class Joueur {
 	public void setListeCarteDuJoueurMain(ArrayList<FactoryCard> listeCarteDuJoueurMain) {this.listeCarteDuJoueurMain = listeCarteDuJoueurMain;}
 	
 	/**
-	 * Supprime une carte en main lorsqu'elle est posé sur le board
-	 * @param card étant la carte choisi
+	 * Supprime une carte en main lorsqu'elle est pose sur le board
+	 * @param card etant la carte choisi
 	 */
 	public void deleteCardMain(FactoryCard card){
 		for (FactoryCard c : listeCarteDuJoueurMain){
@@ -111,7 +111,7 @@ public class Joueur {
 
 	/**
 	 * Met a jour la liste des cartes en jeux
-	 * @param listeCarteEnJeux étant la liste des cartes en jeux a mettre a jour
+	 * @param listeCarteEnJeux etant la liste des cartes en jeux a mettre a jour
 	 */
 	public void setListeCarteEnJeux(ArrayList<FactoryCard> listeCarteEnJeux) {this.listeCarteEnJeux = listeCarteEnJeux;}
 	
@@ -206,8 +206,8 @@ public class Joueur {
 	public void setValChoisi(int valChoisi){this.valChoisi = valChoisi;}
 	
 	/**
-	 * Tire aléatoirement une carte a mettre en main en fonction du type de héros choisi
-	 * @return la nouvelle carte a ajouté a la main
+	 * Tire aleatoirement une carte a mettre en main en fonction du type de heros choisi
+	 * @return la nouvelle carte a ajoute a la main
 	 */
 	public FactoryCard tirageCarte(){
 		int lower = 1 , higher = 9;
