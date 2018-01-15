@@ -143,7 +143,7 @@ public class Main {
 			}			
 			
 			if(choix.equalsIgnoreCase("attaqueHero")){
-				//regler le soucis pour que ça rentre dans la boucle
+				//regler le soucis pour que ca rentre dans la boucle
 				for (FactoryCard card : joueurAdv.getListeCarteEnJeux()){
 					System.err.println("test");
 					if(card.getEffect().contains("Provocation")){
